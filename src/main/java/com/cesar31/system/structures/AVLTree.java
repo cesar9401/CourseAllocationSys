@@ -61,7 +61,7 @@ public class AVLTree<T> {
                 }
             }
         } else if (node.getId().compareTo(father.getId()) == 0) {
-            System.out.println("Ya existe dato" + node.getId());
+            System.out.println("Ya existe dato " + node.getId());
         }
 
         return dad;
@@ -95,6 +95,72 @@ public class AVLTree<T> {
     private AVLNode<T> delete(String id, AVLNode<T> father) {
         AVLNode<T> dad = father;
 
+        if (id.compareTo(father.getId()) < 0) {
+            if (father.getLeft() != null) {
+                if (father.getLeft().getId().compareTo(id) == 0) {
+                    father.setLeft(delete(father.getLeft()));
+                } else {
+                    father.setLeft(delete(id, father.getLeft()));
+                }
+
+                /* verificar factor de equilibrio */
+                if (father.getFactor() == 2) {
+                    if (father.getRight().getFactor() < 0) {
+                        /* rotacio doble derecha */
+                        dad = doubleRightRotation(father);
+                    } else {
+                        dad = rightRotation(father);
+                    }
+                }
+            } else {
+                System.out.println("Nodo no encontrado: " + id);
+            }
+        } else if (id.compareTo(father.getId()) > 0) {
+            if (father.getRight() != null) {
+                if (father.getRight().getId().compareTo(id) == 0) {
+                    father.setRight(delete(father.getRight()));
+                } else {
+                    father.setRight(delete(id, father.getRight()));
+                }
+
+                /* verificar factor de equilibrio */
+                if (father.getFactor() == -2) {
+                    if (father.getLeft().getFactor() > 0) {
+                        /* rotacion dbole izquierda */
+                        dad = doubleLeftRotation(father);
+                    } else {
+                        dad = leftRotation(father);
+                    }
+                }
+            } else {
+                System.out.println("Nodo no encontrado: " + id);
+            }
+
+        } else if (id.compareTo(father.getId()) == 0) {
+            dad = delete(father);
+            if (dad != null) {
+
+                /* revisar factor de equilibrio */
+                if (dad.getFactor() == 2) {
+                    if (dad.getRight().getFactor() < 0) {
+                        /* rotacion doble derecha */
+                        dad = doubleRightRotation(dad);
+                    } else {
+                        dad = rightRotation(dad);
+                    }
+                }
+
+                if (dad.getFactor() == -2) {
+                    if(dad.getLeft().getFactor() > 0) {
+                        /* rotacion doble izquierda */
+                        dad = doubleLeftRotation(dad);
+                    } else {
+                        dad = leftRotation(dad);
+                    }
+                }
+            }
+        }
+
         return dad;
     }
 
@@ -115,13 +181,13 @@ public class AVLTree<T> {
             /* nodo con dos hijos */
             AVLNode<T> dad = lowerRight(node.getRight());
             node.setRight(delete(dad.getId(), node.getRight()));
-        
+
             /* hijo izquierda */
             dad.setLeft(node.getLeft());
             dad.setRight(node.getRight());
-            
+
             node = dad;
-        } else if(right || left) {
+        } else if (right || left) {
             node = right ? node.getRight() : node.getLeft();
         }
 
