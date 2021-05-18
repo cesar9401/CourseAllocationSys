@@ -1,1 +1,7 @@
 target/
+
+# archivos no necesarios en parser
+parser/*.sh
+parser/*.java
+parser/*.java~
+parser/*.txt
