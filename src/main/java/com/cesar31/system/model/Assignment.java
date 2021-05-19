@@ -6,9 +6,12 @@ package com.cesar31.system.model;
  */
 public class Assignment {
 
+    // student.getId().concat(schedule.getId());
+    private String id;
+
     private Student student;
     private Schedule schedule;
-    private int homeworkeScore;
+    private int homeworkScore;
     private int testScore;
 
     public Assignment() {
@@ -17,8 +20,16 @@ public class Assignment {
     public Assignment(Student student, Schedule schedule, int homeworkeScore, int testScore) {
         this.student = student;
         this.schedule = schedule;
-        this.homeworkeScore = homeworkeScore;
+        this.homeworkScore = homeworkeScore;
         this.testScore = testScore;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Student getStudent() {
@@ -37,12 +48,12 @@ public class Assignment {
         this.schedule = schedule;
     }
 
-    public int getHomeworkeScore() {
-        return homeworkeScore;
+    public int getHomeworkScore() {
+        return homeworkScore;
     }
 
-    public void setHomeworkeScore(int homeworkeScore) {
-        this.homeworkeScore = homeworkeScore;
+    public void setHomeworkScore(int homeworkScore) {
+        this.homeworkScore = homeworkScore;
     }
 
     public int getTestScore() {
@@ -55,6 +66,6 @@ public class Assignment {
 
     @Override
     public String toString() {
-        return "Assignment{" + "student=" + student + ", schedule=" + schedule + ", homeworkeScore=" + homeworkeScore + ", testScore=" + testScore + '}';
+        return "Assignment{" + "id=" + id + ", student=" + student + ", schedule=" + schedule + ", homeworkScore=" + homeworkScore + ", testScore=" + testScore + '}';
     }
 }

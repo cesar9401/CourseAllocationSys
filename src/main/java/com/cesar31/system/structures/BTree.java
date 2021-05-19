@@ -31,6 +31,7 @@ public class BTree<T> {
     }
 
     public void insert(Sortable key, T data) {
+        System.out.println("insert Btree: " + data.toString());
         if (this.height == 0) {
             this.root = new BNode<>(this.mK, key, data, this.clazz);
             this.height = 1;
@@ -124,11 +125,11 @@ public class BTree<T> {
         return null;
     }
 
-    public Object search(Sortable key) {
-        return search(key, root);
+    public T get(Sortable key) {
+        return get(key, root);
     }
 
-    public Object search(Sortable key, BNode node) {
+    public T get(Sortable key, BNode<T> node) {
 
         if ((node == null) || (node.mB < 1)) {
             System.err.println("error");
@@ -136,11 +137,11 @@ public class BTree<T> {
         }
 
         if (key.menorQue(node.keys[0])) {
-            return search(key, node.pointers[0]);
+            return get(key, node.pointers[0]);
         }
 
         if (key.mayorQue(node.keys[node.mB - 1])) {
-            return search(key, node.pointers[node.mB]);
+            return get(key, node.pointers[node.mB]);
         }
 
         int i = 0;
@@ -152,7 +153,7 @@ public class BTree<T> {
             return node.data[i];
         }
 
-        return search(key, node.pointers[i]);
+        return get(key, node.pointers[i]);
 
     }
 

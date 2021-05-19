@@ -13,7 +13,8 @@ public class DoublyLinkdList<T> {
     public DoublyLinkdList() {
     }
 
-    public void insert(T data, String id) {
+    public void insert(String id, T data) {
+        System.out.println("Insert doubly: " + data.toString());
         ListNode<T> node = new ListNode<>(data, id);
         insert(node);
     }

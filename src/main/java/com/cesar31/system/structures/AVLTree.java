@@ -19,7 +19,8 @@ public class AVLTree<T> {
         this.size = 0;
     }
 
-    public void insert(T data, String id) {
+    public void insert(String id, T data) {
+        System.out.println("insert avl: " + data.toString());
         AVLNode<T> node = new AVLNode<>(data, id);
 
         if (this.root == null) {
@@ -67,16 +68,16 @@ public class AVLTree<T> {
         return dad;
     }
 
-    public AVLNode<T> search(String id) {
-        return search(this.root, id);
+    public AVLNode<T> get(String id) {
+        return get(this.root, id);
     }
 
-    private AVLNode<T> search(AVLNode<T> father, String id) {
+    private AVLNode<T> get(AVLNode<T> father, String id) {
         if (father != null) {
             if (id.compareTo(father.getId()) < 0) {
-                return search(father.getLeft(), id);
+                return get(father.getLeft(), id);
             } else if (id.compareTo(father.getId()) > 0) {
-                return search(father.getRight(), id);
+                return get(father.getRight(), id);
             } else {
                 return father;
             }

@@ -17,6 +17,12 @@ public class Schedule {
     public Schedule() {
     }
 
+    public Schedule(String id, String interval, String day) {
+        this.id = id;
+        this.interval = interval;
+        this.day = day;
+    }
+    
     public Schedule(String id, String interval, String day, Course course, Classroom classroom, Building building, Professor professor) {
         this.id = id;
         this.interval = interval;

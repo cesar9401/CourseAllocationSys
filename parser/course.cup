@@ -1,6 +1,8 @@
 package com.cesar31.system.parser;
 
+import com.cesar31.system.control.*;
 import com.cesar31.system.model.*;
+import com.cesar31.system.structures.*;
 import java_cup.runtime.Symbol;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +11,11 @@ class CourseParser;
 
 parser code {:
 
+	private Structure edd;
+
 	public CourseParser(CourseLex lex) {
 		super(lex);
+		this.edd = new Structure();
 	}
 
 	public void syntax_error(Symbol cur_token) {
@@ -26,6 +31,9 @@ parser code {:
 		System.out.println("");
 	}
 
+	public Structure getEdd() {
+		return edd;
+	}
 :}
 
 terminal STUDENT, USER, COLLABORATOR, STUDENT_, BUILDING, CLASSROOM, PROFESSOR, COURSE, SCHEDULE, ASSIGNMENT;
@@ -41,30 +49,68 @@ non terminal Schedule schedule;
 non terminal Assignment assignment;
 non terminal Boolean type;
 
+non terminal HashTable<Student> make_student;
+non terminal DoublyLinkdList<User> make_user;
+non terminal DoublyLinkdList<Building> make_building;
+non terminal AVLTree<Professor> make_professor;
+non terminal DoublyLinkdList<Course> make_course;
+non terminal BTree<Schedule> make_schedule;
+non terminal DoublyLinkdList<Assignment> make_assignment;
+
 non terminal first, str;
-non terminal make_student, make_user, make_building, make_classroom, make_professor, make_course, make_schedule, make_assignment;
+non terminal make_classroom;
 
 first ::=
-				make_student make_user make_building make_classroom make_professor make_course make_schedule make_assignment
-				{: System.out.println("Parseado :v"); :}
+				make_student:students
+					{: edd.setStudents(students); :}
+				make_user:users
+					{: edd.setUsers(users); :}
+				make_building:buildings
+					{: edd.setBuildings(buildings); :}
+				make_classroom
+				make_professor:avl
+					{: edd.setProfessors(avl); :}
+				make_course:courses
+					{: edd.setCourses(courses); :}
+				make_schedule:bTree
+					{: edd.setSchedules(bTree); :}
+				make_assignment:assig
+					{: edd.setAssignments(assig); :}
+					{: System.out.println("Parseado :v"); :}
 				;
 
 make_student ::=
-				make_student student
-				| student
+				make_student:table student:s1
+					{:
+						table.put(s1.getId(), s1);
+						RESULT = table;
+					:}
+				| student:s1
+					{:
+						RESULT = new HashTable<>();
+						RESULT.put(s1.getId(), s1);
+					:}
 				;
 
 student ::=
 				STUDENT LPAREN INTEGER:d1 COMMA str:d2 COMMA str:d3 RPAREN SEMI
 					{:
-						RESULT = new Student(d1.toString(), d2.toString(), d3.toString()); 
-						System.out.println(RESULT);
+						RESULT = new Student(d1.toString(), d2.toString(), d3.toString());
+						//System.out.println(RESULT);
 					:}
 				;
 
 make_user ::=
-				make_user user
-				| user
+				make_user:list user:u1
+					{:
+						list.insert(u1.getId(), u1);
+						RESULT = list;
+					:}
+				| user:u1
+					{:
+						RESULT = new DoublyLinkdList<>();
+						RESULT.insert(u1.getId(), u1);
+					:}
 				;
 
 user ::=
@@ -72,20 +118,28 @@ user ::=
 					{:
 						UserType ut = bol ? UserType.STUDENT : UserType.COLLABORATOR;
 						RESULT = new User(d1.toString(), d2.toString(), d3.toString(), ut);
-						System.out.println(RESULT);
+						//System.out.println(RESULT);
 					:}
 				;
 
 make_building ::=
-				make_building building
-				| building
+				make_building:list building:b1
+					{:
+						list.insert(b1.getName(), b1);
+						RESULT = list;
+					:}
+				| building:b1
+					{:
+						RESULT = new DoublyLinkdList<>();
+						RESULT.insert(b1.getName(), b1);
+					:}
 				;
 
 building ::=
 				BUILDING LPAREN str:d1 RPAREN SEMI
 					{:
 						RESULT = new Building(d1.toString());
-						System.out.println(RESULT);
+						//System.out.println(RESULT);
 					:}
 				;
 
@@ -95,52 +149,172 @@ make_classroom ::=
 				;
 
 classroom ::=
-				CLASSROOM LPAREN str COMMA INTEGER COMMA INTEGER RPAREN SEMI
-					{::}
+				CLASSROOM LPAREN str:d1 COMMA INTEGER:d2 COMMA INTEGER:d3 RPAREN SEMI
+					{:
+						Classroom tmp = new Classroom(d2.toString(), Integer.valueOf(d3.toString()));
+						ListNode<Building> b = edd.getBuildings().getNode(d1.toString());
+						if(b != null) {
+							tmp.setBuilding(b.getData());
+							b.getData().getClassrooms().insert(tmp.getId(), tmp);
+						} else {
+							System.out.println("El edificio " + d1.toString() + ", no existe, no se puede agregar el salon: " + tmp.getId());
+						}
+					:}
 				;
 
 make_professor ::=
-				make_professor professor
-				| professor
+				make_professor:avl professor:p1
+					{:
+						avl.insert(p1.getId(), p1);
+						RESULT = avl;
+					:}
+				| professor:p1
+					{:
+						RESULT = new AVLTree<>();
+						RESULT.insert(p1.getId(), p1);
+					:}
 				;
 
 professor ::=
 				PROFESSOR LPAREN INTEGER:d1 COMMA str:d2 COMMA str:d3 RPAREN SEMI
 					{:
 						RESULT = new Professor(d1.toString(), d2.toString(), d3.toString());
-						System.out.println(RESULT);
+						//System.out.println(RESULT);
 					:}
 				;
 
 make_course ::=
-				make_course course
-				| course
+				make_course:list course:c1
+					{:
+						list.insert(c1.getId(), c1);
+						RESULT = list;
+					:}
+				| course:c1
+					{:
+						RESULT = new DoublyLinkdList<>();
+						RESULT.insert(c1.getId(), c1);
+					:}
 				;
 
 course ::=
 				COURSE LPAREN INTEGER:d1 COMMA str:d2 COMMA INTEGER:d3 COMMA INTEGER:d4 RPAREN SEMI
 					{:
 						RESULT = new Course(d1.toString(), d2.toString(), Integer.valueOf(d3.toString()), Integer.valueOf(d4.toString()));
-						System.out.println(RESULT);
+						//System.out.println(RESULT);
 					:}
 				;
 
 make_schedule ::=
-				make_schedule schedule
-				| schedule
+				make_schedule:bTree schedule:s1
+					{:
+						if(s1 != null) {
+							bTree.insert(new Sortable(s1.getId()), s1);
+						}
+						RESULT = bTree;
+					:}
+				| schedule:s1
+					{:
+						RESULT = new BTree<>(Schedule.class);
+						if(s1 != null) {
+							RESULT.insert(new Sortable(s1.getId()), s1);
+						}
+					:}
 				;
 
 schedule ::=
-				SCHEDULE LPAREN INTEGER COMMA INTERVAL COMMA DAY COMMA INTEGER COMMA INTEGER COMMA INPUT COMMA INTEGER RPAREN SEMI
+				SCHEDULE LPAREN INTEGER:d1 COMMA INTERVAL:d2 COMMA DAY:d3 COMMA INTEGER:d4 COMMA INTEGER:d5 COMMA INPUT:d6 COMMA INTEGER:d7 RPAREN SEMI
+					{:
+						// Crear horarios
+						Schedule tmp = new Schedule(d1.toString(), d2.toString(), d3.toString());
+						boolean create = true;
+
+						// Curso
+						if(edd.getCourses().getNode(d4.toString()) != null) {
+							Course c = edd.getCourses().getNode(d4.toString()).getData();
+							tmp.setCourse(c);
+						} else {
+							create = false;
+						}
+
+						// Edificio y salon
+						if(edd.getBuildings().getNode(d6.toString()) != null) {
+							Building b = edd.getBuildings().getNode(d6.toString()).getData();
+							if(b.getClassrooms().getNode(d5.toString()) != null) {
+								Classroom c = b.getClassrooms().getNode(d5.toString()).getData();
+								tmp.setBuilding(b);
+								tmp.setClassroom(c);
+							} else {
+								create = false;
+							}
+						} else {
+							create = false;
+						}
+
+						// Docente
+						if(edd.getProfessors().get(d7.toString()) != null) {
+							Professor p = edd.getProfessors().get(d7.toString()).getData();
+							tmp.setProfessor(p);
+						} else {
+							create = false;
+						}
+
+						// Resultado
+						if(create) {
+							RESULT = tmp;
+						} else {
+							System.out.println("No es posible crear horario: " + tmp.getId());
+						}
+					:}
 				;
 
 make_assignment ::=
-				make_assignment assignment
-				| assignment
+				make_assignment:list assignment:a1
+					{:
+						if(a1 != null) {
+							list.insert(a1.getId(), a1);
+						}
+						RESULT = list;
+					:}
+				| assignment:a1
+					{:
+						RESULT = new DoublyLinkdList<>();
+						if(a1 != null) {
+							RESULT.insert(a1.getId(), a1);
+						}
+					:}
 				;
 
 assignment ::=
-				ASSIGNMENT LPAREN INTEGER COMMA INTEGER COMMA INTEGER COMMA INTEGER RPAREN SEMI
+				ASSIGNMENT LPAREN INTEGER:d1 COMMA INTEGER:d2 COMMA INTEGER:d3 COMMA INTEGER:d4 RPAREN SEMI
+					{:
+						Assignment tmp = new Assignment();
+						tmp.setHomeworkScore(Integer.valueOf(d3.toString()));
+						tmp.setTestScore(Integer.valueOf(d4.toString()));
+						boolean create = true;
+
+						// Estudiante
+						Student e = edd.getStudents().get(d1.toString());
+						if(e != null) {
+							tmp.setStudent(e);
+						} else {
+							create = false;
+						}
+
+						// Horario
+						Schedule s = edd.getSchedules().get(new Sortable(d2.toString()));
+						if(s != null) {
+							tmp.setSchedule(s);
+						} else {
+							create = false;
+						}
+
+						if(create) {
+							tmp.setId(d1.toString().concat(d2.toString()));
+							RESULT = tmp;
+						} else {
+							System.out.println("No se puede crear asignacion para: " + d1.toString() + ", en horario: " + d2.toString());
+						}
+					:}
 				;
 
 str ::=

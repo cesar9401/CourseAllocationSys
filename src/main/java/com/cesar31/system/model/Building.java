@@ -1,5 +1,7 @@
 package com.cesar31.system.model;
 
+import com.cesar31.system.structures.LinkdList;
+
 /**
  *
  * @author cesar31
@@ -7,11 +9,14 @@ package com.cesar31.system.model;
 public class Building {
 
     private String name;
+    private LinkdList<Classroom> classrooms;
 
     public Building() {
+        this.classrooms = new LinkdList<>();
     }
 
     public Building(String name) {
+        this();
         this.name = name;
     }
 
@@ -23,8 +28,12 @@ public class Building {
         this.name = name;
     }
 
+    public LinkdList<Classroom> getClassrooms() {
+        return classrooms;
+    }
+
     @Override
     public String toString() {
-        return "Building{" + "name=" + name + '}';
+        return "Building{" + "name=" + name + ", classrooms=" + classrooms + '}';
     }
 }

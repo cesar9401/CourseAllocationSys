@@ -13,6 +13,11 @@ public class Classroom {
     public Classroom() {
     }
 
+    public Classroom(String id, int numberOfStudents) {
+        this.id = id;
+        this.numberOfStudents = numberOfStudents;
+    }
+
     public Classroom(Building building, String id, int numberOfStudents) {
         this.building = building;
         this.id = id;
