@@ -18,25 +18,26 @@ import java_cup.runtime.*;
 		private boolean isSc = false;
 		private int len = 0;
 
-		private Symbol symbol setString(int type, String s) {
+		private Symbol setString(int type, String s) {
 			if(isSc && s.length() == len) {
 				isSc = false;
 				len = 0;
 				return symbol(INTERVAL, s);
 			}
 
-			switch (s)
-				case "lunes"
-				case "martes"
-				case "miercoles"
-				case "jueves"
-				case "viernes"
-				case "sabado"
-				case "domingo"
+			switch (s) {
+				case "lunes":
+				case "martes":
+				case "miercoles":
+				case "jueves":
+				case "viernes":
+				case "sabado":
+				case "domingo":
 					return symbol(DAY, s);
 
 				default:
-					return symbol(type, s)
+					return symbol(type, s);
+			}
 		}
 
 		private Symbol symbol(int type) {
@@ -131,7 +132,7 @@ Input = \w+
   \"
 	{
 		yybegin(YYINITIAL);
-		return setString(STRING, string.toString());
+		return setString(STR, string.toString());
 	}
 
 	{Schedule}

@@ -1,6 +1,12 @@
 package com.cesar31.system;
 
-import com.cesar31.system.structures.LinkdList;
+import com.cesar31.system.control.FileControl;
+import com.cesar31.system.model.Student;
+import com.cesar31.system.structures.BTree;
+import com.cesar31.system.structures.HashTable;
+import com.cesar31.system.structures.Sortable;
+import java.io.IOException;
+import java.util.HashMap;
 
 /**
  *
@@ -9,23 +15,58 @@ import com.cesar31.system.structures.LinkdList;
 public class Sys {
 
     public static void main(String[] args) {
-        LinkdList<String> list = new LinkdList<>();
-        list.insert("dato4", "5");
-        list.insert("dato4", "10");
-        list.insert("dato4", "11");
+        int min = 1900_00000;
+        int max = 2022_00000;
+        int range = max - min + 1;
+        String save = "0";
 
-        list.insert("dato2", "2");
-        list.insert("dato3", "3");
-        list.insert("dato4", "4");
-        list.insert("dato1", "1");
+        HashTable<Student> table = new HashTable();
+        Student rem = null;
+        for (int i = 0; i < 10000; i++) {
+            Integer random = (int) (Math.random() * range + min);
+            if (i == 2) {
+                save = String.valueOf(random);
+            }
 
-        list.travel();
+            System.out.println(random);
+            table.put(String.valueOf(random), new Student(String.valueOf(random), "Name", "Address"));
 
-        System.out.println(list.getNode("2").getData());
+            if (i == 1500) {
+                rem = table.remove(save);
+            }
+        }
 
-        list.deleteNode("11");
+        if (rem != null) {
+            System.out.println(rem);
+        }
 
-        list.travel();
+        System.out.println("save: " + save);
+        if (table.get(save) != null) {
+            System.out.println(table.get(save));
+        }
+        System.out.println("Datos insertados: " + table.getInserted());
+        System.out.println("Size: " + table.getSize());
 
+    }
+
+    public static void testBTree() {
+        FileControl control = new FileControl();
+        BTree<Student> tree = new BTree(Student.class);
+        int min = 1900_00000;
+        int max = 2022_00000;
+        int range = max - min + 1;
+
+        for (int i = 0; i < 50; i++) {
+            Integer random = (int) (Math.random() * range + min);
+            tree.insert(new Sortable(String.valueOf(random)), new Student(String.valueOf(random), "name", "address"));
+        }
+
+        String content = tree.toDot();
+        control.writeDotFile("bTree.dot", content);
+        try {
+            control.execComand("dot -Tpng bTree.dot -o bTree.png");
+        } catch (IOException ex) {
+            ex.printStackTrace(System.out);
+        }
     }
 }

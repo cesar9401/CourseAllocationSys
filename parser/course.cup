@@ -1,0 +1,130 @@
+package com.cesar31.system.parser;
+
+import com.cesar31.system.model.*;
+import java_cup.runtime.Symbol;
+import java.util.ArrayList;
+import java.util.List;
+
+class CourseParser;
+
+parser code {:
+
+	public CourseParser(CourseLex lex) {
+		super(lex);
+	}
+
+	public void syntax_error(Symbol cur_token) {
+		// this.cur_token = cur_token;
+		List<String> expected = new ArrayList<>();
+		List<Integer> tokens = expected_token_ids();
+
+		System.out.printf("Se encontro: %s -> (%s), linea %d columna %d, se esperaba -> ", cur_token.value, symbl_name_from_id(cur_token.sym), cur_token.left, cur_token.right);
+		for(Integer i : tokens) {
+			// expected.add(symbl_name_from_id(i));
+			System.out.printf("%s, ", symbl_name_from_id(i));
+		}
+		System.out.println("");
+	}
+
+:}
+
+terminal STUDENT, USER, COLLABORATOR, STUDENT_, BUILDING, CLASSROOM, PROFESSOR, COURSE, SCHEDULE, ASSIGNMENT;
+terminal INTEGER, LPAREN, RPAREN, SEMI, COMMA, INPUT, DAY, INTERVAL, STR, ERROR;
+
+non terminal Student student;
+non terminal User user;
+non terminal Building building;
+non terminal Classroom classroom;
+non terminal Professor professor;
+non terminal Course course;
+non terminal Schedule schedule;
+non terminal Assignment assignment;
+
+non terminal first, str, type;
+non terminal make_student, make_user, make_building, make_classroom, make_professor, make_course, make_schedule, make_assignment;
+
+first ::=
+				make_student make_user make_building make_classroom make_professor make_course make_schedule make_assignment
+				{: System.out.println("Parseado :v"); :}
+				;
+
+make_student ::=
+				make_student student
+				| student
+				;
+
+student ::=
+				STUDENT LPAREN INTEGER COMMA str COMMA str RPAREN SEMI
+				;
+
+make_user ::=
+				make_user user
+				| user
+				;
+
+user ::=
+				USER LPAREN INTEGER COMMA str COMMA str COMMA type RPAREN SEMI
+				;
+
+make_building ::=
+				make_building building
+				| building
+				;
+
+building ::=
+				BUILDING LPAREN str RPAREN SEMI
+				;
+
+make_classroom ::=
+				make_classroom classroom
+				| classroom
+				;
+
+classroom ::=
+				CLASSROOM LPAREN str COMMA INTEGER COMMA INTEGER RPAREN SEMI
+				;
+
+make_professor ::=
+				make_professor professor
+				| professor
+				;
+
+professor ::=
+				PROFESSOR LPAREN INTEGER COMMA str COMMA str RPAREN SEMI
+				;
+
+make_course ::=
+				make_course course
+				| course
+				;
+
+course ::=
+				COURSE LPAREN INTEGER COMMA str COMMA INTEGER COMMA INTEGER RPAREN SEMI
+				;
+
+make_schedule ::=
+				make_schedule schedule
+				| schedule
+				;
+
+schedule ::=
+				SCHEDULE LPAREN INTEGER COMMA INTERVAL COMMA DAY COMMA INTEGER COMMA INTEGER COMMA INPUT COMMA INTEGER RPAREN SEMI
+				;
+
+make_assignment ::=
+				make_assignment assignment
+				| assignment
+				;
+
+assignment ::=
+				ASSIGNMENT LPAREN INTEGER COMMA INTEGER COMMA INTEGER COMMA INTEGER RPAREN SEMI
+				;
+
+str ::=
+				STR
+				;
+
+type ::=
+				STUDENT_
+				| COLLABORATOR
+				;

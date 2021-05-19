@@ -6,4 +6,10 @@ package com.cesar31.system.model;
  */
 public class Student extends Person {
 
+    public Student() {
+    }
+
+    public Student(String id, String name, String address) {
+        super(id, name, address);
+    }
 }

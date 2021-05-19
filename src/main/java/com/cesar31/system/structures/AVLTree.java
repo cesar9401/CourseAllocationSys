@@ -20,7 +20,7 @@ public class AVLTree<T> {
     }
 
     public void insert(T data, String id) {
-        AVLNode node = new AVLNode(data, id);
+        AVLNode<T> node = new AVLNode<>(data, id);
 
         if (this.root == null) {
             this.root = node;
@@ -30,7 +30,7 @@ public class AVLTree<T> {
     }
 
     private AVLNode<T> insert(AVLNode<T> node, AVLNode<T> father) {
-        AVLNode dad = father;
+        AVLNode<T> dad = father;
 
         if (node.getId().compareTo(father.getId()) < 0) {
             if (father.getLeft() == null) {
