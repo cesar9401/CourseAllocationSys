@@ -39,8 +39,9 @@ non terminal Professor professor;
 non terminal Course course;
 non terminal Schedule schedule;
 non terminal Assignment assignment;
+non terminal Boolean type;
 
-non terminal first, str, type;
+non terminal first, str;
 non terminal make_student, make_user, make_building, make_classroom, make_professor, make_course, make_schedule, make_assignment;
 
 first ::=
@@ -54,7 +55,11 @@ make_student ::=
 				;
 
 student ::=
-				STUDENT LPAREN INTEGER COMMA str COMMA str RPAREN SEMI
+				STUDENT LPAREN INTEGER:d1 COMMA str:d2 COMMA str:d3 RPAREN SEMI
+					{:
+						RESULT = new Student(d1.toString(), d2.toString(), d3.toString()); 
+						System.out.println(RESULT);
+					:}
 				;
 
 make_user ::=
@@ -63,7 +68,12 @@ make_user ::=
 				;
 
 user ::=
-				USER LPAREN INTEGER COMMA str COMMA str COMMA type RPAREN SEMI
+				USER LPAREN INTEGER:d1 COMMA str:d2 COMMA str:d3 COMMA type:bol RPAREN SEMI
+					{:
+						UserType ut = bol ? UserType.STUDENT : UserType.COLLABORATOR;
+						RESULT = new User(d1.toString(), d2.toString(), d3.toString(), ut);
+						System.out.println(RESULT);
+					:}
 				;
 
 make_building ::=
@@ -72,7 +82,11 @@ make_building ::=
 				;
 
 building ::=
-				BUILDING LPAREN str RPAREN SEMI
+				BUILDING LPAREN str:d1 RPAREN SEMI
+					{:
+						RESULT = new Building(d1.toString());
+						System.out.println(RESULT);
+					:}
 				;
 
 make_classroom ::=
@@ -82,6 +96,7 @@ make_classroom ::=
 
 classroom ::=
 				CLASSROOM LPAREN str COMMA INTEGER COMMA INTEGER RPAREN SEMI
+					{::}
 				;
 
 make_professor ::=
@@ -90,7 +105,11 @@ make_professor ::=
 				;
 
 professor ::=
-				PROFESSOR LPAREN INTEGER COMMA str COMMA str RPAREN SEMI
+				PROFESSOR LPAREN INTEGER:d1 COMMA str:d2 COMMA str:d3 RPAREN SEMI
+					{:
+						RESULT = new Professor(d1.toString(), d2.toString(), d3.toString());
+						System.out.println(RESULT);
+					:}
 				;
 
 make_course ::=
@@ -99,7 +118,11 @@ make_course ::=
 				;
 
 course ::=
-				COURSE LPAREN INTEGER COMMA str COMMA INTEGER COMMA INTEGER RPAREN SEMI
+				COURSE LPAREN INTEGER:d1 COMMA str:d2 COMMA INTEGER:d3 COMMA INTEGER:d4 RPAREN SEMI
+					{:
+						RESULT = new Course(d1.toString(), d2.toString(), Integer.valueOf(d3.toString()), Integer.valueOf(d4.toString()));
+						System.out.println(RESULT);
+					:}
 				;
 
 make_schedule ::=
@@ -121,10 +144,12 @@ assignment ::=
 				;
 
 str ::=
-				STR
+				STR:s {: RESULT = s; :}
+				| DAY:s {: RESULT = s; :}
+				| INTERVAL:s {: RESULT = s; :}
 				;
 
 type ::=
-				STUDENT_
-				| COLLABORATOR
+				STUDENT_ {: RESULT = true; :}
+				| COLLABORATOR {: RESULT = false; :}
 				;

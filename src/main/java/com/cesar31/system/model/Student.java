@@ -12,4 +12,11 @@ public class Student extends Person {
     public Student(String id, String name, String address) {
         super(id, name, address);
     }
+
+    @Override
+    public String toString() {
+        return "Student{" + '}' + super.toString();
+    }
+    
+    
 }

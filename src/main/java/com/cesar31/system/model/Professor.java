@@ -12,4 +12,9 @@ public class Professor extends Person {
     public Professor(String id, String name, String address) {
         super(id, name, address);
     }
+
+    @Override
+    public String toString() {
+        return "Professor{" + '}' + super.toString();
+    }
 }

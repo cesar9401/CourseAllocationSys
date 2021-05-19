@@ -75,10 +75,10 @@ Input = \w+
 	{ return symbol(USER); }
 
 	"colaborador"
-	{ return symbol(COLLABORATOR); }
+	{ return symbol(COLLABORATOR, yytext()); }
 
 	"estudiante"
-	{ return symbol(STUDENT_); }
+	{ return symbol(STUDENT_, yytext()); }
 
 	"Edificio"
 	{ return symbol(BUILDING); }
@@ -99,7 +99,7 @@ Input = \w+
 	{ return symbol(ASSIGNMENT); }
 
 	{Integer}
-	{ return symbol(INTEGER); }
+	{ return symbol(INTEGER, yytext()); }
 
 	"("
 	{ return symbol(LPAREN); }

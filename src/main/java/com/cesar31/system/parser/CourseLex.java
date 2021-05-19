@@ -1064,7 +1064,7 @@ public class CourseLex implements java_cup.runtime.Scanner {
             // fall through
           case 33: break;
           case 7:
-            { return symbol(INTEGER);
+            { return symbol(INTEGER, yytext());
             }
             // fall through
           case 34: break;
@@ -1150,7 +1150,7 @@ public class CourseLex implements java_cup.runtime.Scanner {
             // fall through
           case 50: break;
           case 24:
-            { return symbol(STUDENT_);
+            { return symbol(STUDENT_, yytext());
             }
             // fall through
           case 51: break;
@@ -1160,7 +1160,7 @@ public class CourseLex implements java_cup.runtime.Scanner {
             // fall through
           case 52: break;
           case 26:
-            { return symbol(COLLABORATOR);
+            { return symbol(COLLABORATOR, yytext());
             }
             // fall through
           case 53: break;
