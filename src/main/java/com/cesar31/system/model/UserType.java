@@ -6,5 +6,6 @@ package com.cesar31.system.model;
  */
 public enum UserType {
     STUDENT,
-    COLLABORATOR
+    COLLABORATOR,
+    SUPER
 }

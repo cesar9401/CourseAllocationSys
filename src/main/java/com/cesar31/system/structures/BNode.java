@@ -64,4 +64,22 @@ public class BNode<T> {
     public int getK() {
         return mK;
     }
+
+    public int getmB() {
+        return mB;
+    }
+
+    public Sortable[] getKeys() {
+        return keys;
+    }
+
+    public T[] getData() {
+        return data;
+    }
+
+    public BNode<T>[] getPointers() {
+        return pointers;
+    }
+    
+    
 }

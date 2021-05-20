@@ -38,11 +38,11 @@ public class HashTable<T> {
         } else {
             boolean insert = true;
             while (arrayHash[index] != null) {
-                System.out.println("no null -> " + index + " -> " + arrayHash[index].getKey());
+                // System.out.println("no null -> " + index + " -> " + arrayHash[index].getKey());
                 if (!key.equals(arrayHash[index].getKey())) {
                     arrayHash[index].setMarked(true);
                     index = hashFunction(collisionFunction(id, index));
-                    System.out.println(index);
+                    // System.out.println(index);
                 } else {
                     System.out.println("Cambiar " + data.toString() + " -> " + index);
                     arrayHash[index].setData(data);
@@ -60,11 +60,11 @@ public class HashTable<T> {
         }
 
         double f = (double) this.inserted / (double) this.size;
-        System.out.printf("Factor: %.5f\n", f);
+        // System.out.printf("Factor: %.5f\n", f);
 
         // Hacer rehashing
         if (f >= this.FACTOR) {
-            System.out.println("\n\n*************hacer rehashing*****************");
+            // System.out.println("\n\n*************hacer rehashing*****************");
             rehash();
         }
     }

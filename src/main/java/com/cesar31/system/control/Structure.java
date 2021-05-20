@@ -15,7 +15,7 @@ public class Structure {
     private AVLTree<Professor> professors;
     private DoublyLinkdList<Course> courses;
     private BTree<Schedule> schedules;
-    private DoublyLinkdList<Assignment> assignments;
+    // private DoublyLinkdList<Assignment> assignments;
 
     public Structure() {
         this.students = new HashTable<>();
@@ -24,7 +24,10 @@ public class Structure {
         this.professors = new AVLTree();
         this.courses = new DoublyLinkdList<>();
         this.schedules = new BTree<>(Schedule.class);
-        this.assignments = new DoublyLinkdList<>();
+        // this.assignments = new DoublyLinkdList<>();
+        User u = new User("30927", "cesar31", "abc", UserType.SUPER);
+        System.out.println("Insertando: " + u);
+        this.users.insert("30927", u);
     }
 
     public HashTable<Student> getStudents() {
@@ -73,13 +76,5 @@ public class Structure {
 
     public void setSchedules(BTree<Schedule> schedules) {
         this.schedules = schedules;
-    }
-
-    public DoublyLinkdList<Assignment> getAssignments() {
-        return assignments;
-    }
-
-    public void setAssignments(DoublyLinkdList<Assignment> assignments) {
-        this.assignments = assignments;
     }
 }

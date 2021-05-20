@@ -36,18 +36,18 @@ public class CourseParser extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\045\000\002\025\002\000\002\026\002\000\002\027" +
-    "\002\000\002\030\002\000\002\031\002\000\002\032\002" +
-    "\000\002\022\020\000\002\002\004\000\002\013\004\000" +
-    "\002\013\003\000\002\002\013\000\002\014\004\000\002" +
-    "\014\003\000\002\003\015\000\002\015\004\000\002\015" +
-    "\003\000\002\004\007\000\002\024\004\000\002\024\003" +
-    "\000\002\005\013\000\002\016\004\000\002\016\003\000" +
-    "\002\006\013\000\002\017\004\000\002\017\003\000\002" +
-    "\007\015\000\002\020\004\000\002\020\003\000\002\010" +
-    "\023\000\002\021\004\000\002\021\003\000\002\011\015" +
-    "\000\002\023\003\000\002\023\003\000\002\023\003\000" +
-    "\002\012\003\000\002\012\003" });
+    "\000\044\000\002\025\002\000\002\026\002\000\002\027" +
+    "\002\000\002\030\002\000\002\031\002\000\002\022\017" +
+    "\000\002\002\004\000\002\013\004\000\002\013\003\000" +
+    "\002\002\013\000\002\014\004\000\002\014\003\000\002" +
+    "\003\015\000\002\015\004\000\002\015\003\000\002\004" +
+    "\007\000\002\024\004\000\002\024\003\000\002\005\013" +
+    "\000\002\016\004\000\002\016\003\000\002\006\013\000" +
+    "\002\017\004\000\002\017\003\000\002\007\015\000\002" +
+    "\020\004\000\002\020\003\000\002\010\023\000\002\021" +
+    "\004\000\002\021\003\000\002\011\015\000\002\023\003" +
+    "\000\002\023\003\000\002\023\003\000\002\012\003\000" +
+    "\002\012\003" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -55,70 +55,70 @@ public class CourseParser extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\170\000\004\004\004\001\002\000\004\017\163\001" +
-    "\002\000\006\004\ufff8\005\ufff8\001\002\000\004\002\162" +
+    "\000\167\000\004\004\004\001\002\000\004\017\162\001" +
+    "\002\000\006\004\ufff9\005\ufff9\001\002\000\004\002\161" +
     "\001\002\000\006\004\004\005\001\001\002\000\004\005" +
-    "\014\001\002\000\006\004\ufff9\005\ufff9\001\002\000\006" +
-    "\005\ufff5\010\ufff5\001\002\000\006\005\014\010\000\001" +
+    "\014\001\002\000\006\004\ufffa\005\ufffa\001\002\000\006" +
+    "\005\ufff6\010\ufff6\001\002\000\006\005\014\010\034\001" +
     "\002\000\004\017\015\001\002\000\004\016\016\001\002" +
-    "\000\004\022\017\001\002\000\010\024\023\025\022\026" +
-    "\020\001\002\000\006\020\uffe1\022\uffe1\001\002\000\004" +
-    "\022\024\001\002\000\006\020\uffdf\022\uffdf\001\002\000" +
-    "\006\020\uffe0\022\uffe0\001\002\000\010\024\023\025\022" +
+    "\000\004\022\017\001\002\000\010\024\023\025\021\026" +
+    "\020\001\002\000\006\020\uffe2\022\uffe2\001\002\000\006" +
+    "\020\uffe0\022\uffe0\001\002\000\004\022\024\001\002\000" +
+    "\006\020\uffe1\022\uffe1\001\002\000\010\024\023\025\021" +
     "\026\020\001\002\000\004\022\026\001\002\000\006\006" +
     "\031\007\030\001\002\000\004\020\032\001\002\000\004" +
-    "\020\uffde\001\002\000\004\020\uffdd\001\002\000\004\021" +
-    "\033\001\002\000\006\005\ufff4\010\ufff4\001\002\000\006" +
-    "\005\ufff6\010\ufff6\001\002\000\004\010\036\001\002\000" +
-    "\004\017\156\001\002\000\006\010\036\011\uffff\001\002" +
-    "\000\006\010\ufff2\011\ufff2\001\002\000\004\011\043\001" +
-    "\002\000\006\010\ufff3\011\ufff3\001\002\000\004\017\146" +
-    "\001\002\000\006\011\uffef\012\uffef\001\002\000\006\011" +
-    "\043\012\051\001\002\000\006\011\ufff0\012\ufff0\001\002" +
-    "\000\006\012\uffec\013\uffec\001\002\000\006\012\051\013" +
-    "\ufffe\001\002\000\004\017\052\001\002\000\004\016\053" +
-    "\001\002\000\004\022\054\001\002\000\010\024\023\025" +
-    "\022\026\020\001\002\000\004\022\056\001\002\000\010" +
-    "\024\023\025\022\026\020\001\002\000\004\020\060\001" +
-    "\002\000\004\021\061\001\002\000\006\012\uffeb\013\uffeb" +
-    "\001\002\000\004\013\066\001\002\000\006\012\uffed\013" +
-    "\uffed\001\002\000\006\013\uffe9\014\uffe9\001\002\000\006" +
-    "\013\066\014\ufffd\001\002\000\004\017\067\001\002\000" +
-    "\004\016\070\001\002\000\004\022\071\001\002\000\010" +
-    "\024\023\025\022\026\020\001\002\000\004\022\073\001" +
-    "\002\000\004\016\074\001\002\000\004\022\075\001\002" +
-    "\000\004\016\076\001\002\000\004\020\077\001\002\000" +
-    "\004\021\100\001\002\000\006\013\uffe8\014\uffe8\001\002" +
-    "\000\006\013\uffea\014\uffea\001\002\000\004\014\103\001" +
-    "\002\000\004\017\126\001\002\000\006\014\103\015\ufffc" +
-    "\001\002\000\006\014\uffe6\015\uffe6\001\002\000\004\015" +
-    "\110\001\002\000\006\014\uffe7\015\uffe7\001\002\000\004" +
-    "\017\114\001\002\000\006\002\ufffb\015\110\001\002\000" +
-    "\006\002\uffe3\015\uffe3\001\002\000\006\002\uffe4\015\uffe4" +
-    "\001\002\000\004\016\115\001\002\000\004\022\116\001" +
-    "\002\000\004\016\117\001\002\000\004\022\120\001\002" +
-    "\000\004\016\121\001\002\000\004\022\122\001\002\000" +
-    "\004\016\123\001\002\000\004\020\124\001\002\000\004" +
-    "\021\125\001\002\000\006\002\uffe2\015\uffe2\001\002\000" +
-    "\004\016\127\001\002\000\004\022\130\001\002\000\004" +
-    "\025\131\001\002\000\004\022\132\001\002\000\004\024" +
-    "\133\001\002\000\004\022\134\001\002\000\004\016\135" +
-    "\001\002\000\004\022\136\001\002\000\004\016\137\001" +
-    "\002\000\004\022\140\001\002\000\004\023\141\001\002" +
-    "\000\004\022\142\001\002\000\004\016\143\001\002\000" +
-    "\004\020\144\001\002\000\004\021\145\001\002\000\006" +
-    "\014\uffe5\015\uffe5\001\002\000\010\024\023\025\022\026" +
-    "\020\001\002\000\004\022\150\001\002\000\004\016\151" +
-    "\001\002\000\004\022\152\001\002\000\004\016\153\001" +
-    "\002\000\004\020\154\001\002\000\004\021\155\001\002" +
-    "\000\006\011\uffee\012\uffee\001\002\000\010\024\023\025" +
-    "\022\026\020\001\002\000\004\020\160\001\002\000\004" +
-    "\021\161\001\002\000\006\010\ufff1\011\ufff1\001\002\000" +
-    "\004\002\ufffa\001\002\000\004\016\164\001\002\000\004" +
-    "\022\165\001\002\000\010\024\023\025\022\026\020\001" +
-    "\002\000\004\022\167\001\002\000\010\024\023\025\022" +
-    "\026\020\001\002\000\004\020\171\001\002\000\004\021" +
-    "\172\001\002\000\006\004\ufff7\005\ufff7\001\002" });
+    "\020\uffdf\001\002\000\004\020\uffde\001\002\000\004\021" +
+    "\033\001\002\000\006\005\ufff5\010\ufff5\001\002\000\004" +
+    "\017\155\001\002\000\006\005\ufff7\010\ufff7\001\002\000" +
+    "\006\010\034\011\000\001\002\000\006\010\ufff3\011\ufff3" +
+    "\001\002\000\004\011\042\001\002\000\006\010\ufff4\011" +
+    "\ufff4\001\002\000\004\017\145\001\002\000\006\011\ufff0" +
+    "\012\ufff0\001\002\000\006\011\042\012\050\001\002\000" +
+    "\006\012\uffed\013\uffed\001\002\000\006\011\ufff1\012\ufff1" +
+    "\001\002\000\006\012\050\013\uffff\001\002\000\004\017" +
+    "\051\001\002\000\004\016\052\001\002\000\004\022\053" +
+    "\001\002\000\010\024\023\025\021\026\020\001\002\000" +
+    "\004\022\055\001\002\000\010\024\023\025\021\026\020" +
+    "\001\002\000\004\020\057\001\002\000\004\021\060\001" +
+    "\002\000\006\012\uffec\013\uffec\001\002\000\004\013\065" +
+    "\001\002\000\006\012\uffee\013\uffee\001\002\000\006\013" +
+    "\uffea\014\uffea\001\002\000\006\013\065\014\ufffe\001\002" +
+    "\000\004\017\066\001\002\000\004\016\067\001\002\000" +
+    "\004\022\070\001\002\000\010\024\023\025\021\026\020" +
+    "\001\002\000\004\022\072\001\002\000\004\016\073\001" +
+    "\002\000\004\022\074\001\002\000\004\016\075\001\002" +
+    "\000\004\020\076\001\002\000\004\021\077\001\002\000" +
+    "\006\013\uffe9\014\uffe9\001\002\000\006\013\uffeb\014\uffeb" +
+    "\001\002\000\004\014\102\001\002\000\004\017\125\001" +
+    "\002\000\006\014\102\015\ufffd\001\002\000\006\014\uffe7" +
+    "\015\uffe7\001\002\000\006\014\uffe8\015\uffe8\001\002\000" +
+    "\004\015\110\001\002\000\006\002\ufffc\015\110\001\002" +
+    "\000\004\017\112\001\002\000\006\002\uffe4\015\uffe4\001" +
+    "\002\000\004\016\113\001\002\000\004\022\114\001\002" +
+    "\000\004\016\115\001\002\000\004\022\116\001\002\000" +
+    "\004\016\117\001\002\000\004\022\120\001\002\000\004" +
+    "\016\121\001\002\000\004\020\122\001\002\000\004\021" +
+    "\123\001\002\000\006\002\uffe3\015\uffe3\001\002\000\006" +
+    "\002\uffe5\015\uffe5\001\002\000\004\016\126\001\002\000" +
+    "\004\022\127\001\002\000\004\025\130\001\002\000\004" +
+    "\022\131\001\002\000\004\024\132\001\002\000\004\022" +
+    "\133\001\002\000\004\016\134\001\002\000\004\022\135" +
+    "\001\002\000\004\016\136\001\002\000\004\022\137\001" +
+    "\002\000\004\023\140\001\002\000\004\022\141\001\002" +
+    "\000\004\016\142\001\002\000\004\020\143\001\002\000" +
+    "\004\021\144\001\002\000\006\014\uffe6\015\uffe6\001\002" +
+    "\000\010\024\023\025\021\026\020\001\002\000\004\022" +
+    "\147\001\002\000\004\016\150\001\002\000\004\022\151" +
+    "\001\002\000\004\016\152\001\002\000\004\020\153\001" +
+    "\002\000\004\021\154\001\002\000\006\011\uffef\012\uffef" +
+    "\001\002\000\010\024\023\025\021\026\020\001\002\000" +
+    "\004\020\157\001\002\000\004\021\160\001\002\000\006" +
+    "\010\ufff2\011\ufff2\001\002\000\004\002\ufffb\001\002\000" +
+    "\004\016\163\001\002\000\004\022\164\001\002\000\010" +
+    "\024\023\025\021\026\020\001\002\000\004\022\166\001" +
+    "\002\000\010\024\023\025\021\026\020\001\002\000\004" +
+    "\020\170\001\002\000\004\021\171\001\002\000\006\004" +
+    "\ufff8\005\ufff8\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -126,35 +126,33 @@ public class CourseParser extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\170\000\010\002\004\013\006\022\005\001\001\000" +
+    "\000\167\000\010\002\004\013\006\022\005\001\001\000" +
     "\002\001\001\000\002\001\001\000\002\001\001\000\006" +
     "\002\010\025\007\001\001\000\006\003\011\014\012\001" +
-    "\001\000\002\001\001\000\002\001\001\000\006\003\033" +
-    "\026\034\001\001\000\002\001\001\000\002\001\001\000" +
-    "\002\001\001\000\004\023\020\001\001\000\002\001\001" +
-    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
-    "\004\023\024\001\001\000\002\001\001\000\004\012\026" +
+    "\001\000\002\001\001\000\002\001\001\000\010\003\034" +
+    "\004\036\015\035\001\001\000\002\001\001\000\002\001" +
+    "\001\000\002\001\001\000\004\023\021\001\001\000\002" +
     "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
-    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
-    "\000\006\004\037\015\036\001\001\000\002\001\001\000" +
-    "\006\004\041\027\040\001\001\000\002\001\001\000\006" +
-    "\005\043\024\044\001\001\000\002\001\001\000\002\001" +
-    "\001\000\002\001\001\000\010\005\045\006\046\016\047" +
-    "\001\001\000\002\001\001\000\002\001\001\000\006\006" +
-    "\062\030\061\001\001\000\002\001\001\000\002\001\001" +
-    "\000\002\001\001\000\004\023\054\001\001\000\002\001" +
-    "\001\000\004\023\056\001\001\000\002\001\001\000\002" +
-    "\001\001\000\002\001\001\000\006\007\063\017\064\001" +
-    "\001\000\002\001\001\000\002\001\001\000\006\007\100" +
-    "\031\101\001\001\000\002\001\001\000\002\001\001\000" +
-    "\002\001\001\000\004\023\071\001\001\000\002\001\001" +
-    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\001\000\004\023\024\001\001\000\002\001\001\000\004" +
+    "\012\026\001\001\000\002\001\001\000\002\001\001\000" +
     "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
-    "\001\001\000\006\010\104\020\103\001\001\000\002\001" +
-    "\001\000\006\010\106\032\105\001\001\000\002\001\001" +
-    "\000\006\011\111\021\110\001\001\000\002\001\001\000" +
-    "\002\001\001\000\004\011\112\001\001\000\002\001\001" +
+    "\001\001\000\002\001\001\000\006\004\040\026\037\001" +
+    "\001\000\002\001\001\000\006\005\042\024\043\001\001" +
     "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
+    "\010\005\045\006\044\016\046\001\001\000\002\001\001" +
+    "\000\002\001\001\000\006\006\061\027\060\001\001\000" +
+    "\002\001\001\000\002\001\001\000\002\001\001\000\004" +
+    "\023\053\001\001\000\002\001\001\000\004\023\055\001" +
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "\000\006\007\062\017\063\001\001\000\002\001\001\000" +
+    "\002\001\001\000\006\007\077\030\100\001\001\000\002" +
+    "\001\001\000\002\001\001\000\002\001\001\000\004\023" +
+    "\070\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\006\010\103" +
+    "\020\102\001\001\000\002\001\001\000\006\010\104\031" +
+    "\105\001\001\000\002\001\001\000\002\001\001\000\006" +
+    "\011\110\021\106\001\001\000\004\011\123\001\001\000" +
     "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
     "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
@@ -162,14 +160,15 @@ public class CourseParser extends java_cup.runtime.lr_parser {
     "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
     "\001\001\000\002\001\001\000\002\001\001\000\002\001" +
     "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
-    "\000\002\001\001\000\004\023\146\001\001\000\002\001" +
-    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
     "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
-    "\004\023\156\001\001\000\002\001\001\000\002\001\001" +
-    "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
-    "\002\001\001\000\004\023\165\001\001\000\002\001\001" +
-    "\000\004\023\167\001\001\000\002\001\001\000\002\001" +
-    "\001\000\002\001\001" });
+    "\002\001\001\000\002\001\001\000\002\001\001\000\004" +
+    "\023\145\001\001\000\002\001\001\000\002\001\001\000" +
+    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\002\001\001\000\004\023\155\001\001\000" +
+    "\002\001\001\000\002\001\001\000\002\001\001\000\002" +
+    "\001\001\000\002\001\001\000\002\001\001\000\004\023" +
+    "\164\001\001\000\002\001\001\000\004\023\166\001\001" +
+    "\000\002\001\001\000\002\001\001\000\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -198,7 +197,7 @@ public class CourseParser extends java_cup.runtime.lr_parser {
   /** Indicates start state. */
   public int start_state() {return 0;}
   /** Indicates start production. */
-  public int start_production() {return 7;}
+  public int start_production() {return 6;}
 
   /** <code>EOF</code> Symbol index. */
   public int EOF_sym() {return 0;}
@@ -211,9 +210,9 @@ public class CourseParser extends java_cup.runtime.lr_parser {
 
 	private Structure edd;
 
-	public CourseParser(CourseLex lex) {
+	public CourseParser(CourseLex lex, Structure edd) {
 		super(lex);
-		this.edd = new Structure();
+		this.edd = edd;
 	}
 
 	public void syntax_error(Symbol cur_token) {
@@ -227,10 +226,6 @@ public class CourseParser extends java_cup.runtime.lr_parser {
 			System.out.printf("%s, ", symbl_name_from_id(i));
 		}
 		System.out.println("");
-	}
-
-	public Structure getEdd() {
-		return edd;
 	}
 
 
@@ -261,7 +256,7 @@ class CUP$CourseParser$actions {
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 0: // NT$0 ::= 
             {
-              Object RESULT =null;
+              Boolean RESULT =null;
 		int studentsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
 		int studentsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).right;
 		HashTable<Student> students = (HashTable<Student>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.peek()).value;
@@ -273,14 +268,17 @@ class CUP$CourseParser$actions {
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 1: // NT$1 ::= 
             {
-              Object RESULT =(Object) ((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).value;
-		int studentsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).left;
-		int studentsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).right;
-		HashTable<Student> students = (HashTable<Student>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).value;
-		int usersleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
-		int usersright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).right;
-		DoublyLinkdList<User> users = (DoublyLinkdList<User>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.peek()).value;
- edd.setUsers(users); 
+              Boolean RESULT =(Boolean) ((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).value;
+		int studentsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-3)).left;
+		int studentsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-3)).right;
+		HashTable<Student> students = (HashTable<Student>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-3)).value;
+		int usersleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).left;
+		int usersright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).right;
+		DoublyLinkdList<User> users = (DoublyLinkdList<User>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).value;
+		int buildingsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
+		int buildingsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).right;
+		DoublyLinkdList<Building> buildings = (DoublyLinkdList<Building>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.peek()).value;
+ edd.setBuildings(buildings); 
               CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("NT$1",20, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
             }
           return CUP$CourseParser$result;
@@ -288,31 +286,13 @@ class CUP$CourseParser$actions {
           /*. . . . . . . . . . . . . . . . . . . .*/
           case 2: // NT$2 ::= 
             {
-              Object RESULT =(Object) ((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).value;
-		int studentsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-4)).left;
-		int studentsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-4)).right;
-		HashTable<Student> students = (HashTable<Student>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-4)).value;
-		int usersleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).left;
-		int usersright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).right;
-		DoublyLinkdList<User> users = (DoublyLinkdList<User>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).value;
-		int buildingsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
-		int buildingsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).right;
-		DoublyLinkdList<Building> buildings = (DoublyLinkdList<Building>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.peek()).value;
- edd.setBuildings(buildings); 
-              CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("NT$2",21, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
-            }
-          return CUP$CourseParser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 3: // NT$3 ::= 
-            {
-              Object RESULT =(Object) ((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).value;
-		int studentsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-7)).left;
-		int studentsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-7)).right;
-		HashTable<Student> students = (HashTable<Student>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-7)).value;
-		int usersleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-5)).left;
-		int usersright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-5)).right;
-		DoublyLinkdList<User> users = (DoublyLinkdList<User>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-5)).value;
+              Boolean RESULT =(Boolean) ((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).value;
+		int studentsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-6)).left;
+		int studentsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-6)).right;
+		HashTable<Student> students = (HashTable<Student>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-6)).value;
+		int usersleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-4)).left;
+		int usersright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-4)).right;
+		DoublyLinkdList<User> users = (DoublyLinkdList<User>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-4)).value;
 		int buildingsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-3)).left;
 		int buildingsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-3)).right;
 		DoublyLinkdList<Building> buildings = (DoublyLinkdList<Building>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-3)).value;
@@ -320,20 +300,20 @@ class CUP$CourseParser$actions {
 		int avlright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).right;
 		AVLTree<Professor> avl = (AVLTree<Professor>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.peek()).value;
  edd.setProfessors(avl); 
-              CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("NT$3",22, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
+              CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("NT$2",21, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
             }
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 4: // NT$4 ::= 
+          case 3: // NT$3 ::= 
             {
-              Object RESULT =(Object) ((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).value;
-		int studentsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-9)).left;
-		int studentsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-9)).right;
-		HashTable<Student> students = (HashTable<Student>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-9)).value;
-		int usersleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-7)).left;
-		int usersright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-7)).right;
-		DoublyLinkdList<User> users = (DoublyLinkdList<User>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-7)).value;
+              Boolean RESULT =(Boolean) ((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).value;
+		int studentsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-8)).left;
+		int studentsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-8)).right;
+		HashTable<Student> students = (HashTable<Student>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-8)).value;
+		int usersleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-6)).left;
+		int usersright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-6)).right;
+		DoublyLinkdList<User> users = (DoublyLinkdList<User>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-6)).value;
 		int buildingsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-5)).left;
 		int buildingsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-5)).right;
 		DoublyLinkdList<Building> buildings = (DoublyLinkdList<Building>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-5)).value;
@@ -344,20 +324,20 @@ class CUP$CourseParser$actions {
 		int coursesright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).right;
 		DoublyLinkdList<Course> courses = (DoublyLinkdList<Course>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.peek()).value;
  edd.setCourses(courses); 
-              CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("NT$4",23, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
+              CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("NT$3",22, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
             }
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 5: // NT$5 ::= 
+          case 4: // NT$4 ::= 
             {
-              Object RESULT =(Object) ((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).value;
-		int studentsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-11)).left;
-		int studentsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-11)).right;
-		HashTable<Student> students = (HashTable<Student>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-11)).value;
-		int usersleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-9)).left;
-		int usersright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-9)).right;
-		DoublyLinkdList<User> users = (DoublyLinkdList<User>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-9)).value;
+              Boolean RESULT =(Boolean) ((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).value;
+		int studentsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-10)).left;
+		int studentsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-10)).right;
+		HashTable<Student> students = (HashTable<Student>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-10)).value;
+		int usersleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-8)).left;
+		int usersright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-8)).right;
+		DoublyLinkdList<User> users = (DoublyLinkdList<User>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-8)).value;
 		int buildingsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-7)).left;
 		int buildingsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-7)).right;
 		DoublyLinkdList<Building> buildings = (DoublyLinkdList<Building>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-7)).value;
@@ -371,49 +351,49 @@ class CUP$CourseParser$actions {
 		int bTreeright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).right;
 		BTree<Schedule> bTree = (BTree<Schedule>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.peek()).value;
  edd.setSchedules(bTree); 
-              CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("NT$5",24, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
+              CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("NT$4",23, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
             }
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 6: // first ::= make_student NT$0 make_user NT$1 make_building NT$2 make_classroom make_professor NT$3 make_course NT$4 make_schedule NT$5 make_assignment 
+          case 5: // first ::= make_student NT$0 make_user make_building NT$1 make_classroom make_professor NT$2 make_course NT$3 make_schedule NT$4 make_assignment 
             {
-              Object RESULT =null;
-              // propagate RESULT from NT$5
-                RESULT = (Object) ((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).value;
-		int studentsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-14)).left;
-		int studentsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-14)).right;
-		HashTable<Student> students = (HashTable<Student>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-14)).value;
-		int usersleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-12)).left;
-		int usersright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-12)).right;
-		DoublyLinkdList<User> users = (DoublyLinkdList<User>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-12)).value;
-		int buildingsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-10)).left;
-		int buildingsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-10)).right;
-		DoublyLinkdList<Building> buildings = (DoublyLinkdList<Building>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-10)).value;
-		int avlleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-7)).left;
-		int avlright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-7)).right;
-		AVLTree<Professor> avl = (AVLTree<Professor>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-7)).value;
-		int coursesleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-5)).left;
-		int coursesright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-5)).right;
-		DoublyLinkdList<Course> courses = (DoublyLinkdList<Course>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-5)).value;
-		int bTreeleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-3)).left;
-		int bTreeright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-3)).right;
-		BTree<Schedule> bTree = (BTree<Schedule>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-3)).value;
-		int assigleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).left;
-		int assigright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).right;
-		DoublyLinkdList<Assignment> assig = (DoublyLinkdList<Assignment>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).value;
-		 edd.setAssignments(assig);  System.out.println("Parseado :v"); 
-              CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("first",16, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-13)), ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
+              Boolean RESULT =null;
+              // propagate RESULT from NT$4
+                RESULT = (Boolean) ((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).value;
+		int studentsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-12)).left;
+		int studentsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-12)).right;
+		HashTable<Student> students = (HashTable<Student>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-12)).value;
+		int usersleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-10)).left;
+		int usersright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-10)).right;
+		DoublyLinkdList<User> users = (DoublyLinkdList<User>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-10)).value;
+		int buildingsleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-9)).left;
+		int buildingsright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-9)).right;
+		DoublyLinkdList<Building> buildings = (DoublyLinkdList<Building>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-9)).value;
+		int avlleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-6)).left;
+		int avlright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-6)).right;
+		AVLTree<Professor> avl = (AVLTree<Professor>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-6)).value;
+		int coursesleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-4)).left;
+		int coursesright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-4)).right;
+		DoublyLinkdList<Course> courses = (DoublyLinkdList<Course>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-4)).value;
+		int bTreeleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).left;
+		int bTreeright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).right;
+		BTree<Schedule> bTree = (BTree<Schedule>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).value;
+		int assigleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
+		int assigright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).right;
+		DoublyLinkdList<Assignment> assig = (DoublyLinkdList<Assignment>)((java_cup.runtime.Symbol) CUP$CourseParser$stack.peek()).value;
+		 RESULT = true; 
+              CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("first",16, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-12)), ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
             }
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 7: // $START ::= first EOF 
+          case 6: // $START ::= first EOF 
             {
               Object RESULT =null;
 		int start_valleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).left;
 		int start_valright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).right;
-		Object start_val = (Object)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).value;
+		Boolean start_val = (Boolean)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).value;
 		RESULT = start_val;
               CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("$START",0, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)), ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
             }
@@ -422,7 +402,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 8: // make_student ::= make_student student 
+          case 7: // make_student ::= make_student student 
             {
               HashTable<Student> RESULT =null;
 		int tableleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).left;
@@ -440,7 +420,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 9: // make_student ::= student 
+          case 8: // make_student ::= student 
             {
               HashTable<Student> RESULT =null;
 		int s1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
@@ -455,7 +435,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 10: // student ::= STUDENT LPAREN INTEGER COMMA str COMMA str RPAREN SEMI 
+          case 9: // student ::= STUDENT LPAREN INTEGER COMMA str COMMA str RPAREN SEMI 
             {
               Student RESULT =null;
 		int d1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-6)).left;
@@ -476,7 +456,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 11: // make_user ::= make_user user 
+          case 10: // make_user ::= make_user user 
             {
               DoublyLinkdList<User> RESULT =null;
 		int listleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).left;
@@ -486,7 +466,10 @@ class CUP$CourseParser$actions {
 		int u1right = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).right;
 		User u1 = (User)((java_cup.runtime.Symbol) CUP$CourseParser$stack.peek()).value;
 		
-						list.insert(u1.getId(), u1);
+						if(u1 != null) {
+							edd.getUsers().insert(u1.getId(), u1);
+							// list.insert(u1.getId(), u1);
+						}
 						RESULT = list;
 					
               CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("make_user",10, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)), ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
@@ -494,22 +477,25 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 12: // make_user ::= user 
+          case 11: // make_user ::= user 
             {
               DoublyLinkdList<User> RESULT =null;
 		int u1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
 		int u1right = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).right;
 		User u1 = (User)((java_cup.runtime.Symbol) CUP$CourseParser$stack.peek()).value;
 		
-						RESULT = new DoublyLinkdList<>();
-						RESULT.insert(u1.getId(), u1);
+						// RESULT = new DoublyLinkdList<>();
+						if(u1 != null) {
+							edd.getUsers().insert(u1.getId(), u1);
+							// RESULT.insert(u1.getId(), u1);
+						}
 					
               CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("make_user",10, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
             }
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 13: // user ::= USER LPAREN INTEGER COMMA str COMMA str COMMA type RPAREN SEMI 
+          case 12: // user ::= USER LPAREN INTEGER COMMA str COMMA str COMMA type RPAREN SEMI 
             {
               User RESULT =null;
 		int d1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-8)).left;
@@ -521,20 +507,30 @@ class CUP$CourseParser$actions {
 		int d3left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-4)).left;
 		int d3right = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-4)).right;
 		Object d3 = (Object)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-4)).value;
-		int bolleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).left;
-		int bolright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).right;
-		Boolean bol = (Boolean)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).value;
+		int isStudentleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).left;
+		int isStudentright = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).right;
+		Boolean isStudent = (Boolean)((java_cup.runtime.Symbol) CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).value;
 		
-						UserType ut = bol ? UserType.STUDENT : UserType.COLLABORATOR;
-						RESULT = new User(d1.toString(), d2.toString(), d3.toString(), ut);
-						//System.out.println(RESULT);
+						UserType ut = isStudent ? UserType.STUDENT : UserType.COLLABORATOR;
+						User tmp = new User(d1.toString(), d2.toString(), d3.toString(), ut);
+
+						if(isStudent) {
+							Student s = edd.getStudents().get(d1.toString());
+							if(s != null) {
+								RESULT = tmp;
+							} else {
+								System.out.println("No se puede agregar al usuario(no existe estudiante): " + tmp);
+							}
+						} else {
+							RESULT = tmp;
+						}
 					
               CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("user",1, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-10)), ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
             }
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 14: // make_building ::= make_building building 
+          case 13: // make_building ::= make_building building 
             {
               DoublyLinkdList<Building> RESULT =null;
 		int listleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).left;
@@ -552,7 +548,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 15: // make_building ::= building 
+          case 14: // make_building ::= building 
             {
               DoublyLinkdList<Building> RESULT =null;
 		int b1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
@@ -567,7 +563,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 16: // building ::= BUILDING LPAREN str RPAREN SEMI 
+          case 15: // building ::= BUILDING LPAREN str RPAREN SEMI 
             {
               Building RESULT =null;
 		int d1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-2)).left;
@@ -582,7 +578,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 17: // make_classroom ::= make_classroom classroom 
+          case 16: // make_classroom ::= make_classroom classroom 
             {
               Object RESULT =null;
 
@@ -591,7 +587,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 18: // make_classroom ::= classroom 
+          case 17: // make_classroom ::= classroom 
             {
               Object RESULT =null;
 
@@ -600,7 +596,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 19: // classroom ::= CLASSROOM LPAREN str COMMA INTEGER COMMA INTEGER RPAREN SEMI 
+          case 18: // classroom ::= CLASSROOM LPAREN str COMMA INTEGER COMMA INTEGER RPAREN SEMI 
             {
               Classroom RESULT =null;
 		int d1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-6)).left;
@@ -627,7 +623,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 20: // make_professor ::= make_professor professor 
+          case 19: // make_professor ::= make_professor professor 
             {
               AVLTree<Professor> RESULT =null;
 		int avlleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).left;
@@ -645,7 +641,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 21: // make_professor ::= professor 
+          case 20: // make_professor ::= professor 
             {
               AVLTree<Professor> RESULT =null;
 		int p1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
@@ -660,7 +656,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 22: // professor ::= PROFESSOR LPAREN INTEGER COMMA str COMMA str RPAREN SEMI 
+          case 21: // professor ::= PROFESSOR LPAREN INTEGER COMMA str COMMA str RPAREN SEMI 
             {
               Professor RESULT =null;
 		int d1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-6)).left;
@@ -681,7 +677,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 23: // make_course ::= make_course course 
+          case 22: // make_course ::= make_course course 
             {
               DoublyLinkdList<Course> RESULT =null;
 		int listleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).left;
@@ -699,7 +695,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 24: // make_course ::= course 
+          case 23: // make_course ::= course 
             {
               DoublyLinkdList<Course> RESULT =null;
 		int c1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
@@ -714,7 +710,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 25: // course ::= COURSE LPAREN INTEGER COMMA str COMMA INTEGER COMMA INTEGER RPAREN SEMI 
+          case 24: // course ::= COURSE LPAREN INTEGER COMMA str COMMA INTEGER COMMA INTEGER RPAREN SEMI 
             {
               Course RESULT =null;
 		int d1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-8)).left;
@@ -738,7 +734,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 26: // make_schedule ::= make_schedule schedule 
+          case 25: // make_schedule ::= make_schedule schedule 
             {
               BTree<Schedule> RESULT =null;
 		int bTreeleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).left;
@@ -758,7 +754,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 27: // make_schedule ::= schedule 
+          case 26: // make_schedule ::= schedule 
             {
               BTree<Schedule> RESULT =null;
 		int s1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
@@ -775,7 +771,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 28: // schedule ::= SCHEDULE LPAREN INTEGER COMMA INTERVAL COMMA DAY COMMA INTEGER COMMA INTEGER COMMA INPUT COMMA INTEGER RPAREN SEMI 
+          case 27: // schedule ::= SCHEDULE LPAREN INTEGER COMMA INTERVAL COMMA DAY COMMA INTEGER COMMA INTEGER COMMA INPUT COMMA INTEGER RPAREN SEMI 
             {
               Schedule RESULT =null;
 		int d1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-14)).left;
@@ -846,7 +842,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 29: // make_assignment ::= make_assignment assignment 
+          case 28: // make_assignment ::= make_assignment assignment 
             {
               DoublyLinkdList<Assignment> RESULT =null;
 		int listleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)).left;
@@ -855,35 +851,25 @@ class CUP$CourseParser$actions {
 		int a1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
 		int a1right = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).right;
 		Assignment a1 = (Assignment)((java_cup.runtime.Symbol) CUP$CourseParser$stack.peek()).value;
-		
-						if(a1 != null) {
-							list.insert(a1.getId(), a1);
-						}
-						RESULT = list;
-					
+
               CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("make_assignment",15, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-1)), ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
             }
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 30: // make_assignment ::= assignment 
+          case 29: // make_assignment ::= assignment 
             {
               DoublyLinkdList<Assignment> RESULT =null;
 		int a1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
 		int a1right = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).right;
 		Assignment a1 = (Assignment)((java_cup.runtime.Symbol) CUP$CourseParser$stack.peek()).value;
-		
-						RESULT = new DoublyLinkdList<>();
-						if(a1 != null) {
-							RESULT.insert(a1.getId(), a1);
-						}
-					
+
               CUP$CourseParser$result = parser.getSymbolFactory().newSymbol("make_assignment",15, ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()), RESULT);
             }
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 31: // assignment ::= ASSIGNMENT LPAREN INTEGER COMMA INTEGER COMMA INTEGER COMMA INTEGER RPAREN SEMI 
+          case 30: // assignment ::= ASSIGNMENT LPAREN INTEGER COMMA INTEGER COMMA INTEGER COMMA INTEGER RPAREN SEMI 
             {
               Assignment RESULT =null;
 		int d1left = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.elementAt(CUP$CourseParser$top-8)).left;
@@ -915,14 +901,17 @@ class CUP$CourseParser$actions {
 						// Horario
 						Schedule s = edd.getSchedules().get(new Sortable(d2.toString()));
 						if(s != null) {
-							tmp.setSchedule(s);
-						} else {
-							create = false;
-						}
+							int actual = s.getAssignments().getSize();
+							int limit = s.getClassroom().getNumberOfStudents();
 
-						if(create) {
-							tmp.setId(d1.toString().concat(d2.toString()));
-							RESULT = tmp;
+							if(actual < limit) {
+								tmp.setSchedule(s);
+								tmp.setId(d1.toString()/*.concat(d2.toString())*/);
+								s.getAssignments().insert(tmp.getId(), tmp);
+								//System.out.println("Insertando asignacion: " + tmp.getId());
+							} else {
+								System.out.println("Limite de asignacion alcanzado");
+							}
 						} else {
 							System.out.println("No se puede crear asignacion para: " + d1.toString() + ", en horario: " + d2.toString());
 						}
@@ -932,7 +921,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 32: // str ::= STR 
+          case 31: // str ::= STR 
             {
               Object RESULT =null;
 		int sleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
@@ -944,7 +933,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 33: // str ::= DAY 
+          case 32: // str ::= DAY 
             {
               Object RESULT =null;
 		int sleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
@@ -956,7 +945,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 34: // str ::= INTERVAL 
+          case 33: // str ::= INTERVAL 
             {
               Object RESULT =null;
 		int sleft = ((java_cup.runtime.Symbol)CUP$CourseParser$stack.peek()).left;
@@ -968,7 +957,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 35: // type ::= STUDENT_ 
+          case 34: // type ::= STUDENT_ 
             {
               Boolean RESULT =null;
 		 RESULT = true; 
@@ -977,7 +966,7 @@ class CUP$CourseParser$actions {
           return CUP$CourseParser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 36: // type ::= COLLABORATOR 
+          case 35: // type ::= COLLABORATOR 
             {
               Boolean RESULT =null;
 		 RESULT = false; 

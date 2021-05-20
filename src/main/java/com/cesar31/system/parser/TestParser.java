@@ -17,9 +17,10 @@ public class TestParser {
         FileControl control = new FileControl();
         String source = control.readData(path);
         //System.out.println(source);
-
+        Structure edd = new Structure();
+        
         CourseLex lex = new CourseLex(new StringReader(source));
-        CourseParser parser = new CourseParser(lex);
+        CourseParser parser = new CourseParser(lex, edd);
         try {
             parser.parse();
         } catch (Exception ex) {

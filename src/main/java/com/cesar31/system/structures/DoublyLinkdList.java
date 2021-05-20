@@ -9,14 +9,20 @@ public class DoublyLinkdList<T> {
 
     private ListNode<T> top;
     private ListNode<T> bottom;
+    private int size;
 
     public DoublyLinkdList() {
+        this.size = 0;
     }
 
     public void insert(String id, T data) {
-        System.out.println("Insert doubly: " + data.toString());
-        ListNode<T> node = new ListNode<>(data, id);
-        insert(node);
+        if (this.getNode(id) == null) {
+            // System.out.println("Insert doubly: " + data.toString());
+            ListNode<T> node = new ListNode<>(data, id);
+            insert(node);
+        } else {
+            System.out.println("Ya existe: " + id);
+        }
     }
 
     private void insert(ListNode<T> node) {
@@ -34,6 +40,7 @@ public class DoublyLinkdList<T> {
             this.top.setPrevious(node);
             this.bottom = node;
         }
+        this.size++;
     }
 
     public ListNode<T> getNode(String id) {
@@ -61,6 +68,8 @@ public class DoublyLinkdList<T> {
                     this.top.setPrevious(this.bottom);
                     this.bottom.setNext(this.top);
                 }
+                this.size--;
+                // System.out.println("del: " + id);
             } else {
                 ListNode<T> aux = this.top;
                 while (aux.getNext() != this.top) {
@@ -73,11 +82,17 @@ public class DoublyLinkdList<T> {
                         del.getNext().setPrevious(aux);
                         aux.setNext(del.getNext());
 
+                        this.size--;
+                        // System.out.println("del: " + id);
                         break;
                     }
                     aux = aux.getNext();
                 }
             }
         }
+    }
+
+    public int getSize() {
+        return size;
     }
 }

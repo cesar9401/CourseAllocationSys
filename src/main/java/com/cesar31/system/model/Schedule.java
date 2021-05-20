@@ -1,5 +1,7 @@
 package com.cesar31.system.model;
 
+import com.cesar31.system.structures.DoublyLinkdList;
+
 /**
  *
  * @author cesar31
@@ -13,17 +15,23 @@ public class Schedule {
     private Classroom classroom;
     private Building building;
     private Professor professor;
+    
+    // Asignaciones
+    private DoublyLinkdList<Assignment> assignments;
 
     public Schedule() {
+        this.assignments = new DoublyLinkdList<>();
     }
 
     public Schedule(String id, String interval, String day) {
+        this();
         this.id = id;
         this.interval = interval;
         this.day = day;
     }
     
     public Schedule(String id, String interval, String day, Course course, Classroom classroom, Building building, Professor professor) {
+        this();
         this.id = id;
         this.interval = interval;
         this.day = day;
@@ -87,6 +95,10 @@ public class Schedule {
 
     public void setProfessor(Professor professor) {
         this.professor = professor;
+    }
+
+    public DoublyLinkdList<Assignment> getAssignments() {
+        return assignments;
     }
 
     @Override

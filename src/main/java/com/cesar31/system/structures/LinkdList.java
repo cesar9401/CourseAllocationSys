@@ -13,9 +13,13 @@ public class LinkdList<T> {
     }
 
     public void insert(String id, T data) {
-        System.out.println("insert simple: " + data.toString());
-        ListNode<T> tmp = new ListNode<>(data, id);
-        insert(tmp);
+        if (this.getNode(id) == null) {
+            // System.out.println("insert simple: " + data.toString());
+            ListNode<T> tmp = new ListNode<>(data, id);
+            insert(tmp);
+        } else {
+            System.out.println("Ya existe: " + id);
+        }
     }
 
     /**

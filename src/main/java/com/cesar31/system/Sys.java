@@ -1,6 +1,7 @@
 package com.cesar31.system;
 
 import com.cesar31.system.control.FileControl;
+import com.cesar31.system.control.MainController;
 import com.cesar31.system.model.Student;
 import com.cesar31.system.structures.BTree;
 import com.cesar31.system.structures.HashTable;
@@ -14,6 +15,11 @@ import java.io.IOException;
 public class Sys {
 
     public static void main(String[] args) {
+        MainController control = new MainController();
+        control.initView();
+    }
+
+    public static void testHahsTable() {
         int min = 1900_00000;
         int max = 2022_00000;
         int range = max - min + 1;
@@ -45,7 +51,6 @@ public class Sys {
         }
         System.out.println("Datos insertados: " + table.getInserted());
         System.out.println("Size: " + table.getSize());
-
     }
 
     public static void testBTree() {
@@ -67,5 +72,16 @@ public class Sys {
         } catch (IOException ex) {
             ex.printStackTrace(System.out);
         }
+    }
+
+    /**
+     * Leer archivo
+     *
+     * @param path
+     * @return
+     */
+    public boolean readData(String path) {
+        
+        return true;
     }
 }

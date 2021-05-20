@@ -20,7 +20,7 @@ public class AVLTree<T> {
     }
 
     public void insert(String id, T data) {
-        System.out.println("insert avl: " + data.toString());
+        // System.out.println("insert avl: " + data.toString());
         AVLNode<T> node = new AVLNode<>(data, id);
 
         if (this.root == null) {

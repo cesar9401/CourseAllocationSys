@@ -13,9 +13,9 @@ parser code {:
 
 	private Structure edd;
 
-	public CourseParser(CourseLex lex) {
+	public CourseParser(CourseLex lex, Structure edd) {
 		super(lex);
-		this.edd = new Structure();
+		this.edd = edd;
 	}
 
 	public void syntax_error(Symbol cur_token) {
@@ -29,10 +29,6 @@ parser code {:
 			System.out.printf("%s, ", symbl_name_from_id(i));
 		}
 		System.out.println("");
-	}
-
-	public Structure getEdd() {
-		return edd;
 	}
 :}
 
@@ -56,15 +52,15 @@ non terminal AVLTree<Professor> make_professor;
 non terminal DoublyLinkdList<Course> make_course;
 non terminal BTree<Schedule> make_schedule;
 non terminal DoublyLinkdList<Assignment> make_assignment;
+non terminal Boolean first;
 
-non terminal first, str;
-non terminal make_classroom;
+non terminal str, make_classroom;
 
 first ::=
 				make_student:students
 					{: edd.setStudents(students); :}
 				make_user:users
-					{: edd.setUsers(users); :}
+					// {: edd.setUsers(users); :}
 				make_building:buildings
 					{: edd.setBuildings(buildings); :}
 				make_classroom
@@ -75,8 +71,8 @@ first ::=
 				make_schedule:bTree
 					{: edd.setSchedules(bTree); :}
 				make_assignment:assig
-					{: edd.setAssignments(assig); :}
-					{: System.out.println("Parseado :v"); :}
+					// {: edd.setAssignments(assig); :}
+					{: RESULT = true; :}
 				;
 
 make_student ::=
@@ -103,22 +99,38 @@ student ::=
 make_user ::=
 				make_user:list user:u1
 					{:
-						list.insert(u1.getId(), u1);
+						if(u1 != null) {
+							edd.getUsers().insert(u1.getId(), u1);
+							// list.insert(u1.getId(), u1);
+						}
 						RESULT = list;
 					:}
 				| user:u1
 					{:
-						RESULT = new DoublyLinkdList<>();
-						RESULT.insert(u1.getId(), u1);
+						// RESULT = new DoublyLinkdList<>();
+						if(u1 != null) {
+							edd.getUsers().insert(u1.getId(), u1);
+							// RESULT.insert(u1.getId(), u1);
+						}
 					:}
 				;
 
 user ::=
-				USER LPAREN INTEGER:d1 COMMA str:d2 COMMA str:d3 COMMA type:bol RPAREN SEMI
+				USER LPAREN INTEGER:d1 COMMA str:d2 COMMA str:d3 COMMA type:isStudent RPAREN SEMI
 					{:
-						UserType ut = bol ? UserType.STUDENT : UserType.COLLABORATOR;
-						RESULT = new User(d1.toString(), d2.toString(), d3.toString(), ut);
-						//System.out.println(RESULT);
+						UserType ut = isStudent ? UserType.STUDENT : UserType.COLLABORATOR;
+						User tmp = new User(d1.toString(), d2.toString(), d3.toString(), ut);
+
+						if(isStudent) {
+							Student s = edd.getStudents().get(d1.toString());
+							if(s != null) {
+								RESULT = tmp;
+							} else {
+								System.out.println("No se puede agregar al usuario(no existe estudiante): " + tmp);
+							}
+						} else {
+							RESULT = tmp;
+						}
 					:}
 				;
 
@@ -269,19 +281,19 @@ schedule ::=
 
 make_assignment ::=
 				make_assignment:list assignment:a1
-					{:
-						if(a1 != null) {
-							list.insert(a1.getId(), a1);
-						}
-						RESULT = list;
-					:}
+					// {:
+					// 	if(a1 != null) {
+					// 		list.insert(a1.getId(), a1);
+					// 	}
+					// 	RESULT = list;
+					// :}
 				| assignment:a1
-					{:
-						RESULT = new DoublyLinkdList<>();
-						if(a1 != null) {
-							RESULT.insert(a1.getId(), a1);
-						}
-					:}
+					// {:
+					// 	RESULT = new DoublyLinkdList<>();
+					// 	if(a1 != null) {
+					// 		RESULT.insert(a1.getId(), a1);
+					// 	}
+					// :}
 				;
 
 assignment ::=
@@ -303,14 +315,17 @@ assignment ::=
 						// Horario
 						Schedule s = edd.getSchedules().get(new Sortable(d2.toString()));
 						if(s != null) {
-							tmp.setSchedule(s);
-						} else {
-							create = false;
-						}
+							int actual = s.getAssignments().getSize();
+							int limit = s.getClassroom().getNumberOfStudents();
 
-						if(create) {
-							tmp.setId(d1.toString().concat(d2.toString()));
-							RESULT = tmp;
+							if(actual < limit) {
+								tmp.setSchedule(s);
+								tmp.setId(d1.toString()/*.concat(d2.toString())*/);
+								s.getAssignments().insert(tmp.getId(), tmp);
+								//System.out.println("Insertando asignacion: " + tmp.getId());
+							} else {
+								System.out.println("Limite de asignacion alcanzado");
+							}
 						} else {
 							System.out.println("No se puede crear asignacion para: " + d1.toString() + ", en horario: " + d2.toString());
 						}

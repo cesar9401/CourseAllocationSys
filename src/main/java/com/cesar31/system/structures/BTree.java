@@ -31,7 +31,7 @@ public class BTree<T> {
     }
 
     public void insert(Sortable key, T data) {
-        System.out.println("insert Btree: " + data.toString());
+        // System.out.println("insert Btree: " + data.toString());
         if (this.height == 0) {
             this.root = new BNode<>(this.mK, key, data, this.clazz);
             this.height = 1;
