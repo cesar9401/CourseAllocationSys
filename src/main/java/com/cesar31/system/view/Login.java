@@ -17,6 +17,10 @@ public class Login extends javax.swing.JFrame {
     public Login(MainController control) {
         initComponents();
         this.control = control;
+        
+        /* borrar esto */
+        this.idText.setText("1");
+        this.passText.setText("12345");
     }
 
     /**

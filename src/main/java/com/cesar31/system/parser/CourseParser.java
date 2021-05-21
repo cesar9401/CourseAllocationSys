@@ -904,7 +904,7 @@ class CUP$CourseParser$actions {
 							int actual = s.getAssignments().getSize();
 							int limit = s.getClassroom().getNumberOfStudents();
 
-							if(actual < limit) {
+							if(actual <= limit) {
 								tmp.setSchedule(s);
 								tmp.setId(d1.toString()/*.concat(d2.toString())*/);
 								s.getAssignments().insert(tmp.getId(), tmp);

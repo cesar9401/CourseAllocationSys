@@ -14,20 +14,24 @@ public class AVLTree<T> {
 
     private AVLNode<T> root;
     private int size;
+    private boolean inserted;
 
     public AVLTree() {
         this.size = 0;
     }
 
-    public void insert(String id, T data) {
+    public boolean insert(String id, T data) {
         // System.out.println("insert avl: " + data.toString());
         AVLNode<T> node = new AVLNode<>(data, id);
-
+        inserted = true;
+        
         if (this.root == null) {
             this.root = node;
         } else {
             this.root = insert(node, root);
         }
+        
+        return this.inserted;
     }
 
     private AVLNode<T> insert(AVLNode<T> node, AVLNode<T> father) {
@@ -63,6 +67,7 @@ public class AVLTree<T> {
             }
         } else if (node.getId().compareTo(father.getId()) == 0) {
             System.out.println("Ya existe dato " + node.getId());
+            this.inserted = false;
         }
 
         return dad;

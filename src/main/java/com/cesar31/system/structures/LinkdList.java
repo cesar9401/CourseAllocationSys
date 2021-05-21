@@ -12,14 +12,14 @@ public class LinkdList<T> {
     public LinkdList() {
     }
 
-    public void insert(String id, T data) {
+    public boolean insert(String id, T data) {
         if (this.getNode(id) == null) {
             // System.out.println("insert simple: " + data.toString());
             ListNode<T> tmp = new ListNode<>(data, id);
             insert(tmp);
-        } else {
-            System.out.println("Ya existe: " + id);
+            return true;
         }
+        return false;
     }
 
     /**

@@ -15,14 +15,14 @@ public class DoublyLinkdList<T> {
         this.size = 0;
     }
 
-    public void insert(String id, T data) {
+    public boolean insert(String id, T data) {
         if (this.getNode(id) == null) {
             // System.out.println("Insert doubly: " + data.toString());
             ListNode<T> node = new ListNode<>(data, id);
             insert(node);
-        } else {
-            System.out.println("Ya existe: " + id);
+            return true;
         }
+        return false;
     }
 
     private void insert(ListNode<T> node) {

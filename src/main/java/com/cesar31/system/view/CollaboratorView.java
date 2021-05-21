@@ -1,9 +1,16 @@
 package com.cesar31.system.view;
 
 import com.cesar31.system.control.*;
+import com.cesar31.system.model.Assignment;
+import com.cesar31.system.model.Classroom;
+import com.cesar31.system.model.Course;
+import com.cesar31.system.model.Professor;
+import com.cesar31.system.model.Schedule;
 import com.cesar31.system.model.Student;
 import com.cesar31.system.model.User;
 import com.cesar31.system.model.UserType;
+import com.cesar31.system.structures.ListNode;
+import com.cesar31.system.structures.Sortable;
 import javax.swing.JOptionPane;
 
 /**
@@ -60,6 +67,63 @@ public class CollaboratorView extends javax.swing.JFrame {
         passUText = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
         typeUCombo = new javax.swing.JComboBox<>();
+        coursePane = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        codCourse = new javax.swing.JTextField();
+        searchCourseButton = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        nameCourse = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        semesterCourse = new javax.swing.JTextField();
+        editCourseButton = new javax.swing.JButton();
+        delCourseButton = new javax.swing.JButton();
+        addCourseButton = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        creditsCourse = new javax.swing.JTextField();
+        professorPane = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        idProf = new javax.swing.JTextField();
+        searchProfButton = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        nameProf = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        addressProf = new javax.swing.JTextField();
+        editProfButton = new javax.swing.JButton();
+        delProfButton = new javax.swing.JButton();
+        addProfButton = new javax.swing.JButton();
+        buildingPane = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        idBuilding = new javax.swing.JTextField();
+        delBuildingButton = new javax.swing.JButton();
+        addBuildingButton = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        buildingClass = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        numberClass = new javax.swing.JTextField();
+        Capacidad = new javax.swing.JLabel();
+        countClass = new javax.swing.JTextField();
+        searchClassroom = new javax.swing.JButton();
+        addClassroom = new javax.swing.JButton();
+        editClassroom = new javax.swing.JButton();
+        delClassroom = new javax.swing.JButton();
+        assignmentPane = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        assignStudent = new javax.swing.JTextField();
+        searchAButton = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        assignSchedule = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        editAButton = new javax.swing.JButton();
+        delAButton = new javax.swing.JButton();
+        addAButton = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
+        assignScore = new javax.swing.JTextField();
+        assignTest = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -352,6 +416,609 @@ public class CollaboratorView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Usuarios", userPane);
 
+        coursePane.setBackground(new java.awt.Color(153, 163, 164));
+
+        jLabel11.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Codigo");
+
+        jLabel12.setFont(new java.awt.Font("Roboto", 0, 48)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setText("Cursos");
+
+        codCourse.setBackground(new java.awt.Color(112, 123, 124));
+        codCourse.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        codCourse.setForeground(new java.awt.Color(0, 0, 0));
+
+        searchCourseButton.setBackground(new java.awt.Color(52, 152, 219));
+        searchCourseButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        searchCourseButton.setForeground(new java.awt.Color(66, 73, 73));
+        searchCourseButton.setText("Buscar");
+        searchCourseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchCourseButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setText("Nombre");
+
+        nameCourse.setBackground(new java.awt.Color(112, 123, 124));
+        nameCourse.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        nameCourse.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel14.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setText("Semestre");
+
+        semesterCourse.setBackground(new java.awt.Color(112, 123, 124));
+        semesterCourse.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        semesterCourse.setForeground(new java.awt.Color(0, 0, 0));
+
+        editCourseButton.setBackground(new java.awt.Color(52, 152, 219));
+        editCourseButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        editCourseButton.setForeground(new java.awt.Color(66, 73, 73));
+        editCourseButton.setText("Editar");
+        editCourseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editCourseButtonActionPerformed(evt);
+            }
+        });
+
+        delCourseButton.setBackground(new java.awt.Color(52, 152, 219));
+        delCourseButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        delCourseButton.setForeground(new java.awt.Color(66, 73, 73));
+        delCourseButton.setText("Eliminar");
+        delCourseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delCourseButtonActionPerformed(evt);
+            }
+        });
+
+        addCourseButton.setBackground(new java.awt.Color(52, 152, 219));
+        addCourseButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        addCourseButton.setForeground(new java.awt.Color(66, 73, 73));
+        addCourseButton.setText("Agregar");
+        addCourseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCourseButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setText("Creditos");
+
+        creditsCourse.setBackground(new java.awt.Color(112, 123, 124));
+        creditsCourse.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        creditsCourse.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout coursePaneLayout = new javax.swing.GroupLayout(coursePane);
+        coursePane.setLayout(coursePaneLayout);
+        coursePaneLayout.setHorizontalGroup(
+            coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, coursePaneLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel12)
+                .addGap(321, 321, 321))
+            .addGroup(coursePaneLayout.createSequentialGroup()
+                .addGap(141, 141, 141)
+                .addGroup(coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel13))
+                .addGap(18, 18, 18)
+                .addGroup(coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(codCourse, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                    .addComponent(nameCourse)
+                    .addComponent(semesterCourse)
+                    .addGroup(coursePaneLayout.createSequentialGroup()
+                        .addGroup(coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(searchCourseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(editCourseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addCourseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(delCourseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(creditsCourse))
+                .addGap(255, 255, 255))
+        );
+        coursePaneLayout.setVerticalGroup(
+            coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(coursePaneLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel12)
+                .addGap(113, 113, 113)
+                .addGroup(coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(codCourse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nameCourse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
+                .addGap(18, 18, 18)
+                .addGroup(coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(semesterCourse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(creditsCourse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchCourseButton)
+                    .addComponent(addCourseButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(editCourseButton)
+                    .addComponent(delCourseButton))
+                .addContainerGap(224, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Cursos", coursePane);
+
+        professorPane.setBackground(new java.awt.Color(153, 163, 164));
+
+        jLabel16.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setText("Id");
+
+        jLabel17.setFont(new java.awt.Font("Roboto", 0, 48)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("Catedráticos");
+
+        idProf.setBackground(new java.awt.Color(112, 123, 124));
+        idProf.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        idProf.setForeground(new java.awt.Color(0, 0, 0));
+
+        searchProfButton.setBackground(new java.awt.Color(52, 152, 219));
+        searchProfButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        searchProfButton.setForeground(new java.awt.Color(66, 73, 73));
+        searchProfButton.setText("Buscar");
+        searchProfButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchProfButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel18.setText("Nombre");
+
+        nameProf.setBackground(new java.awt.Color(112, 123, 124));
+        nameProf.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        nameProf.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel19.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel19.setText("Direccion");
+
+        addressProf.setBackground(new java.awt.Color(112, 123, 124));
+        addressProf.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        addressProf.setForeground(new java.awt.Color(0, 0, 0));
+
+        editProfButton.setBackground(new java.awt.Color(52, 152, 219));
+        editProfButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        editProfButton.setForeground(new java.awt.Color(66, 73, 73));
+        editProfButton.setText("Editar");
+        editProfButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editProfButtonActionPerformed(evt);
+            }
+        });
+
+        delProfButton.setBackground(new java.awt.Color(52, 152, 219));
+        delProfButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        delProfButton.setForeground(new java.awt.Color(66, 73, 73));
+        delProfButton.setText("Eliminar");
+        delProfButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delProfButtonActionPerformed(evt);
+            }
+        });
+
+        addProfButton.setBackground(new java.awt.Color(52, 152, 219));
+        addProfButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        addProfButton.setForeground(new java.awt.Color(66, 73, 73));
+        addProfButton.setText("Agregar");
+        addProfButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addProfButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout professorPaneLayout = new javax.swing.GroupLayout(professorPane);
+        professorPane.setLayout(professorPaneLayout);
+        professorPaneLayout.setHorizontalGroup(
+            professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(professorPaneLayout.createSequentialGroup()
+                .addGap(141, 141, 141)
+                .addGroup(professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel18))
+                .addGap(18, 18, 18)
+                .addGroup(professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(professorPaneLayout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(professorPaneLayout.createSequentialGroup()
+                        .addGroup(professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idProf, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                            .addComponent(nameProf)
+                            .addComponent(addressProf)
+                            .addGroup(professorPaneLayout.createSequentialGroup()
+                                .addGroup(professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(searchProfButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(editProfButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(addProfButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(delProfButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(255, 255, 255))))
+        );
+        professorPaneLayout.setVerticalGroup(
+            professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(professorPaneLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jLabel17)
+                .addGap(107, 107, 107)
+                .addGroup(professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(idProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nameProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18))
+                .addGap(18, 18, 18)
+                .addGroup(professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(addressProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchProfButton)
+                    .addComponent(addProfButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(editProfButton)
+                    .addComponent(delProfButton))
+                .addContainerGap(277, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Catedraticos", professorPane);
+
+        buildingPane.setBackground(new java.awt.Color(153, 163, 164));
+
+        jLabel20.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel20.setText("Id");
+
+        jLabel21.setFont(new java.awt.Font("Roboto", 0, 48)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel21.setText("Edificios");
+
+        idBuilding.setBackground(new java.awt.Color(112, 123, 124));
+        idBuilding.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        idBuilding.setForeground(new java.awt.Color(0, 0, 0));
+
+        delBuildingButton.setBackground(new java.awt.Color(52, 152, 219));
+        delBuildingButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        delBuildingButton.setForeground(new java.awt.Color(66, 73, 73));
+        delBuildingButton.setText("Eliminar");
+        delBuildingButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delBuildingButtonActionPerformed(evt);
+            }
+        });
+
+        addBuildingButton.setBackground(new java.awt.Color(52, 152, 219));
+        addBuildingButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        addBuildingButton.setForeground(new java.awt.Color(66, 73, 73));
+        addBuildingButton.setText("Agregar");
+        addBuildingButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBuildingButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setFont(new java.awt.Font("Roboto", 0, 48)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel22.setText("Salones");
+
+        jLabel23.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel23.setText("Edificio");
+
+        buildingClass.setBackground(new java.awt.Color(112, 123, 124));
+        buildingClass.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        buildingClass.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel24.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel24.setText("Salon");
+
+        numberClass.setBackground(new java.awt.Color(112, 123, 124));
+        numberClass.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        numberClass.setForeground(new java.awt.Color(0, 0, 0));
+
+        Capacidad.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        Capacidad.setForeground(new java.awt.Color(0, 0, 0));
+        Capacidad.setText("Capacidad");
+
+        countClass.setBackground(new java.awt.Color(112, 123, 124));
+        countClass.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        countClass.setForeground(new java.awt.Color(0, 0, 0));
+
+        searchClassroom.setBackground(new java.awt.Color(52, 152, 219));
+        searchClassroom.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        searchClassroom.setForeground(new java.awt.Color(66, 73, 73));
+        searchClassroom.setText("Buscar");
+        searchClassroom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchClassroomActionPerformed(evt);
+            }
+        });
+
+        addClassroom.setBackground(new java.awt.Color(52, 152, 219));
+        addClassroom.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        addClassroom.setForeground(new java.awt.Color(66, 73, 73));
+        addClassroom.setText("Agregar");
+        addClassroom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addClassroomActionPerformed(evt);
+            }
+        });
+
+        editClassroom.setBackground(new java.awt.Color(52, 152, 219));
+        editClassroom.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        editClassroom.setForeground(new java.awt.Color(66, 73, 73));
+        editClassroom.setText("Editar");
+        editClassroom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editClassroomActionPerformed(evt);
+            }
+        });
+
+        delClassroom.setBackground(new java.awt.Color(52, 152, 219));
+        delClassroom.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        delClassroom.setForeground(new java.awt.Color(66, 73, 73));
+        delClassroom.setText("Eliminar");
+        delClassroom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delClassroomActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout buildingPaneLayout = new javax.swing.GroupLayout(buildingPane);
+        buildingPane.setLayout(buildingPaneLayout);
+        buildingPaneLayout.setHorizontalGroup(
+            buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(buildingPaneLayout.createSequentialGroup()
+                .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, buildingPaneLayout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Capacidad)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel24))
+                        .addGap(18, 18, 18)
+                        .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(numberClass)
+                            .addComponent(countClass)
+                            .addGroup(buildingPaneLayout.createSequentialGroup()
+                                .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(editClassroom, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(searchClassroom, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, Short.MAX_VALUE)
+                                .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(addClassroom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(delClassroom, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)))
+                            .addComponent(buildingClass)))
+                    .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(buildingPaneLayout.createSequentialGroup()
+                            .addGap(299, 299, 299)
+                            .addComponent(jLabel21))
+                        .addGroup(buildingPaneLayout.createSequentialGroup()
+                            .addGap(212, 212, 212)
+                            .addComponent(jLabel20)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(buildingPaneLayout.createSequentialGroup()
+                                    .addComponent(addBuildingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(delBuildingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(idBuilding, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(buildingPaneLayout.createSequentialGroup()
+                            .addGap(312, 312, 312)
+                            .addComponent(jLabel22))))
+                .addGap(227, 227, 227))
+        );
+        buildingPaneLayout.setVerticalGroup(
+            buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(buildingPaneLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jLabel21)
+                .addGap(18, 18, 18)
+                .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(idBuilding, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addBuildingButton)
+                    .addComponent(delBuildingButton))
+                .addGap(77, 77, 77)
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(buildingClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(numberClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24))
+                .addGap(18, 18, 18)
+                .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Capacidad)
+                    .addComponent(countClass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchClassroom)
+                    .addComponent(addClassroom))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(editClassroom)
+                    .addComponent(delClassroom))
+                .addContainerGap(146, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Edificios", buildingPane);
+
+        assignmentPane.setBackground(new java.awt.Color(153, 163, 164));
+
+        jLabel25.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel25.setText("Estudiante");
+
+        jLabel26.setFont(new java.awt.Font("Roboto", 0, 48)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel26.setText("Asignaciones");
+
+        assignStudent.setBackground(new java.awt.Color(112, 123, 124));
+        assignStudent.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        assignStudent.setForeground(new java.awt.Color(0, 0, 0));
+
+        searchAButton.setBackground(new java.awt.Color(52, 152, 219));
+        searchAButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        searchAButton.setForeground(new java.awt.Color(66, 73, 73));
+        searchAButton.setText("Buscar");
+        searchAButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchAButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel27.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel27.setText("id Horario");
+
+        assignSchedule.setBackground(new java.awt.Color(112, 123, 124));
+        assignSchedule.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        assignSchedule.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel28.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel28.setText("Zona");
+
+        editAButton.setBackground(new java.awt.Color(52, 152, 219));
+        editAButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        editAButton.setForeground(new java.awt.Color(66, 73, 73));
+        editAButton.setText("Editar");
+        editAButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editAButtonActionPerformed(evt);
+            }
+        });
+
+        delAButton.setBackground(new java.awt.Color(52, 152, 219));
+        delAButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        delAButton.setForeground(new java.awt.Color(66, 73, 73));
+        delAButton.setText("Eliminar");
+        delAButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delAButtonActionPerformed(evt);
+            }
+        });
+
+        addAButton.setBackground(new java.awt.Color(52, 152, 219));
+        addAButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        addAButton.setForeground(new java.awt.Color(66, 73, 73));
+        addAButton.setText("Agregar");
+        addAButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addAButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel30.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel30.setText("Final");
+
+        assignScore.setBackground(new java.awt.Color(112, 123, 124));
+        assignScore.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        assignScore.setForeground(new java.awt.Color(0, 0, 0));
+
+        assignTest.setBackground(new java.awt.Color(112, 123, 124));
+        assignTest.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        assignTest.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout assignmentPaneLayout = new javax.swing.GroupLayout(assignmentPane);
+        assignmentPane.setLayout(assignmentPaneLayout);
+        assignmentPaneLayout.setHorizontalGroup(
+            assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(assignmentPaneLayout.createSequentialGroup()
+                .addGap(141, 141, 141)
+                .addGroup(assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(assignmentPaneLayout.createSequentialGroup()
+                        .addComponent(jLabel26)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(assignmentPaneLayout.createSequentialGroup()
+                        .addGroup(assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(assignStudent)
+                            .addComponent(assignSchedule)
+                            .addGroup(assignmentPaneLayout.createSequentialGroup()
+                                .addGroup(assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(searchAButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(editAButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(addAButton, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                                    .addComponent(delAButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(assignScore)
+                            .addComponent(assignTest))
+                        .addGap(255, 255, 255))))
+        );
+        assignmentPaneLayout.setVerticalGroup(
+            assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(assignmentPaneLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabel26)
+                .addGap(67, 67, 67)
+                .addGroup(assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(assignStudent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(assignSchedule, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27))
+                .addGap(18, 18, 18)
+                .addGroup(assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(assignScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(assignTest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchAButton)
+                    .addComponent(addAButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(editAButton)
+                    .addComponent(delAButton))
+                .addContainerGap(268, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Asignaciones", assignmentPane);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -468,20 +1135,265 @@ public class CollaboratorView extends javax.swing.JFrame {
 
     private void editUButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editUButtonActionPerformed
         // TODO add your handling code here:
+        String id = idUTxt.getText();
+        String username = userTxt.getText();
+        String pass = String.valueOf(passUText.getPassword());
+        UserType type = this.typeUCombo.getSelectedIndex() == 0 ? UserType.STUDENT : UserType.COLLABORATOR;
+        crud.editUser(id, username, pass, type);
     }//GEN-LAST:event_editUButtonActionPerformed
 
     private void delUButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delUButtonActionPerformed
         // TODO add your handling code here:
+        String id = idUTxt.getText();
+        crud.delUser(id);
     }//GEN-LAST:event_delUButtonActionPerformed
 
     private void addUButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUButtonActionPerformed
         // TODO add your handling code here:
+        String id = idUTxt.getText();
+        String username = userTxt.getText();
+        String pass = String.valueOf(passUText.getPassword());
+        UserType type = this.typeUCombo.getSelectedIndex() == 0 ? UserType.STUDENT : UserType.COLLABORATOR;
+
+        crud.addUser(id, username, pass, type);
     }//GEN-LAST:event_addUButtonActionPerformed
+
+    private void searchCourseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCourseButtonActionPerformed
+        // TODO add your handling code here:
+        String code = codCourse.getText();
+        if (!code.trim().isEmpty()) {
+            if (control.getEdd().getCourses().getNode(code) != null) {
+                Course tmp = control.getEdd().getCourses().getNode(code).getData();
+
+                codCourse.setText(tmp.getId());
+                nameCourse.setText(tmp.getName());
+                semesterCourse.setText(String.valueOf(tmp.getSemester()));
+                creditsCourse.setText(String.valueOf(tmp.getCredits()));
+            } else {
+                showMessage("El curso " + code + ", no existe.", "Informacion");
+            }
+        }
+    }//GEN-LAST:event_searchCourseButtonActionPerformed
+
+    private void editCourseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editCourseButtonActionPerformed
+        // TODO add your handling code here:
+        String code = codCourse.getText();
+        String name = nameCourse.getText();
+        String semester = semesterCourse.getText();
+        String credits = creditsCourse.getText();
+
+        crud.editCourse(code, name, semester, credits);
+    }//GEN-LAST:event_editCourseButtonActionPerformed
+
+    private void delCourseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delCourseButtonActionPerformed
+        // TODO add your handling code here:
+        String code = codCourse.getText();
+        crud.deleteCourse(code);
+    }//GEN-LAST:event_delCourseButtonActionPerformed
+
+    private void addCourseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCourseButtonActionPerformed
+        // TODO add your handling code here:
+        String code = codCourse.getText();
+        String name = nameCourse.getText();
+        String semester = semesterCourse.getText();
+        String credits = creditsCourse.getText();
+
+        crud.addCourse(code, name, semester, credits);
+    }//GEN-LAST:event_addCourseButtonActionPerformed
+
+    private void searchProfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchProfButtonActionPerformed
+        // TODO add your handling code here:
+        String id = idProf.getText();
+        if (!id.trim().isEmpty()) {
+            if (control.getEdd().getProfessors().get(id) != null) {
+                Professor tmp = control.getEdd().getProfessors().get(id).getData();
+                idProf.setText(tmp.getId());
+                nameProf.setText(tmp.getName());
+                addressProf.setText(tmp.getAddress());
+            } else {
+                showMessage("El catedratico con id: " + id + ", no existe.", "Información");
+            }
+        }
+    }//GEN-LAST:event_searchProfButtonActionPerformed
+
+    private void editProfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfButtonActionPerformed
+        // TODO add your handling code here:
+        String id = idProf.getText();
+        String name = nameProf.getText();
+        String address = addressProf.getText();
+        crud.editProfessor(id, name, address);
+    }//GEN-LAST:event_editProfButtonActionPerformed
+
+    private void delProfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delProfButtonActionPerformed
+        // TODO add your handling code here:
+        String id = idProf.getText();
+        crud.delProfessor(id);
+    }//GEN-LAST:event_delProfButtonActionPerformed
+
+    private void addProfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProfButtonActionPerformed
+        // TODO add your handling code here:
+        String id = idProf.getText();
+        String name = nameProf.getText();
+        String address = addressProf.getText();
+
+        crud.addProfessor(id, name, address);
+    }//GEN-LAST:event_addProfButtonActionPerformed
+
+    private void delBuildingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delBuildingButtonActionPerformed
+        // TODO add your handling code here:
+        String id = idBuilding.getText();
+        System.out.println(id);
+        crud.delBuilding(id);
+    }//GEN-LAST:event_delBuildingButtonActionPerformed
+
+    private void addBuildingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBuildingButtonActionPerformed
+        // TODO add your handling code here:
+        String id = idBuilding.getText();
+        crud.addBuilding(id);
+    }//GEN-LAST:event_addBuildingButtonActionPerformed
+
+    private void searchClassroomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchClassroomActionPerformed
+        // TODO add your handling code here:
+        String building = buildingClass.getText();
+        String clazz = numberClass.getText();
+
+        if (!building.trim().isEmpty() && !clazz.trim().isEmpty()) {
+            if (control.getEdd().getBuildings().getNode(building) != null) {
+                ListNode<Classroom> node = control.getEdd().getBuildings().getNode(building).getData().getClassrooms().getNode(clazz);
+                if (node != null) {
+                    Classroom c = node.getData();
+                    buildingClass.setText(c.getBuilding().getName());
+                    numberClass.setText(c.getId());
+                    countClass.setText(String.valueOf(c.getNumberOfStudents()));
+                } else {
+                    showMessage("El salon " + clazz + ", no existe.", "Error");
+                }
+            } else {
+                showMessage("El edificio " + building + ", no existe.", "Error");
+            }
+        }
+    }//GEN-LAST:event_searchClassroomActionPerformed
+
+    private void addClassroomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addClassroomActionPerformed
+        // TODO add your handling code here:
+        String build = buildingClass.getText();
+        String clazz = numberClass.getText();
+        String count = countClass.getText();
+
+        crud.addClassroom(build, clazz, count);
+    }//GEN-LAST:event_addClassroomActionPerformed
+
+    private void editClassroomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editClassroomActionPerformed
+        // TODO add your handling code here:
+        String build = buildingClass.getText();
+        String clazz = numberClass.getText();
+        String count = countClass.getText();
+
+        crud.editClassroom(build, clazz, count);
+    }//GEN-LAST:event_editClassroomActionPerformed
+
+    private void delClassroomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delClassroomActionPerformed
+        // TODO add your handling code here:
+        String building = buildingClass.getText();
+        String clazz = numberClass.getText();
+        crud.delClassroom(building, clazz);
+    }//GEN-LAST:event_delClassroomActionPerformed
+
+    private void searchAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchAButtonActionPerformed
+        // TODO add your handling code here:
+        String student = assignStudent.getText();
+        String schedule = assignSchedule.getText();
+        String score = assignScore.getText();
+        String test = assignTest.getText();
+
+        if (!schedule.trim().isEmpty() && !student.trim().isEmpty()) {
+            if (control.getEdd().getSchedules().get(new Sortable(schedule)) != null) {
+                Schedule sc = control.getEdd().getSchedules().get(new Sortable(schedule));
+                if (sc.getAssignments().getNode(student) != null) {
+                    Assignment tmp = sc.getAssignments().getNode(student).getData();
+
+                    assignStudent.setText(tmp.getId());
+                    assignSchedule.setText(tmp.getSchedule().getId());
+                    assignScore.setText(String.valueOf(tmp.getHomeworkScore()));
+                    assignTest.setText(String.valueOf(tmp.getTestScore()));
+                } else {
+                    showMessage("No se encuentran asignaciones para: " + student, "Error");
+                }
+            } else {
+                showMessage("El horario indicado no existe.", "Error");
+            }
+        }
+    }//GEN-LAST:event_searchAButtonActionPerformed
+
+    public void clearAssignment() {
+        assignStudent.setText("");
+        assignSchedule.setText("");
+        assignScore.setText("");
+        assignTest.setText("");
+    }
+
+    private void editAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editAButtonActionPerformed
+        // TODO add your handling code here:
+        String student = assignStudent.getText();
+        String schedule = assignSchedule.getText();
+        String score = assignScore.getText();
+        String test = assignTest.getText();
+
+        crud.editAssignment(student, schedule, score, test);
+    }//GEN-LAST:event_editAButtonActionPerformed
+
+    private void delAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delAButtonActionPerformed
+        // TODO add your handling code here:
+        String student = assignStudent.getText();
+        String schedule = assignSchedule.getText();
+        
+        crud.delAssignment(student, schedule);
+    }//GEN-LAST:event_delAButtonActionPerformed
+
+    private void addAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAButtonActionPerformed
+        // TODO add your handling code here:
+        String student = assignStudent.getText();
+        String schedule = assignSchedule.getText();
+        String score = assignScore.getText();
+        String test = assignTest.getText();
+
+        crud.addAssignment(student, schedule, score, test);
+    }//GEN-LAST:event_addAButtonActionPerformed
+
+    public void clearClassroom() {
+        buildingClass.setText("");
+        numberClass.setText("");
+        countClass.setText("");
+    }
+
+    public void clearBuilding() {
+        idBuilding.setText("");
+    }
+
+    public void clearProf() {
+        idProf.setText("");
+        nameProf.setText("");
+        addressProf.setText("");
+    }
+
+    public void clearUser() {
+        idUTxt.setText("");
+        userTxt.setText("");
+        passUText.setText("");
+        typeUCombo.setSelectedIndex(0);
+    }
 
     public void clearStudent() {
         idText.setText("");
         nameText.setText("");
         addressText.setText("");
+    }
+
+    public void clearCourse() {
+        codCourse.setText("");
+        nameCourse.setText("");
+        semesterCourse.setText("");
+        creditsCourse.setText("");
     }
 
     public void showMessage(String message, String title) {
@@ -493,18 +1405,66 @@ public class CollaboratorView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Capacidad;
+    private javax.swing.JButton addAButton;
+    private javax.swing.JButton addBuildingButton;
     private javax.swing.JButton addButton;
+    private javax.swing.JButton addClassroom;
+    private javax.swing.JButton addCourseButton;
+    private javax.swing.JButton addProfButton;
     private javax.swing.JButton addUButton;
+    private javax.swing.JTextField addressProf;
     private javax.swing.JTextField addressText;
+    private javax.swing.JTextField assignSchedule;
+    private javax.swing.JTextField assignScore;
+    private javax.swing.JTextField assignStudent;
+    private javax.swing.JTextField assignTest;
+    private javax.swing.JPanel assignmentPane;
+    private javax.swing.JTextField buildingClass;
+    private javax.swing.JPanel buildingPane;
+    private javax.swing.JTextField codCourse;
+    private javax.swing.JTextField countClass;
+    private javax.swing.JPanel coursePane;
+    private javax.swing.JTextField creditsCourse;
+    private javax.swing.JButton delAButton;
+    private javax.swing.JButton delBuildingButton;
     private javax.swing.JButton delButton;
+    private javax.swing.JButton delClassroom;
+    private javax.swing.JButton delCourseButton;
+    private javax.swing.JButton delProfButton;
     private javax.swing.JButton delUButton;
+    private javax.swing.JButton editAButton;
     private javax.swing.JButton editButton;
+    private javax.swing.JButton editClassroom;
+    private javax.swing.JButton editCourseButton;
+    private javax.swing.JButton editProfButton;
     private javax.swing.JButton editUButton;
+    private javax.swing.JTextField idBuilding;
+    private javax.swing.JTextField idProf;
     private javax.swing.JTextField idText;
     private javax.swing.JTextField idUTxt;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -516,10 +1476,19 @@ public class CollaboratorView extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField nameCourse;
+    private javax.swing.JTextField nameProf;
     private javax.swing.JTextField nameText;
+    private javax.swing.JTextField numberClass;
     private javax.swing.JPasswordField passUText;
+    private javax.swing.JPanel professorPane;
+    private javax.swing.JButton searchAButton;
     private javax.swing.JButton searchButton;
+    private javax.swing.JButton searchClassroom;
+    private javax.swing.JButton searchCourseButton;
+    private javax.swing.JButton searchProfButton;
     private javax.swing.JButton searchUButton;
+    private javax.swing.JTextField semesterCourse;
     private javax.swing.JPanel studentPane;
     private javax.swing.JComboBox<String> typeUCombo;
     private javax.swing.JPanel userPane;
