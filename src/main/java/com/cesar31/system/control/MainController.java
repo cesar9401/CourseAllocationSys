@@ -19,12 +19,13 @@ public final class MainController {
 
     private Structure edd;
     private Crud crud;
+    private Report report;
 
     public MainController() {
         this.edd = new Structure();
         this.crud = new Crud(edd, this);
-
-        this.readData("/home/cesar31/Java/CourseAllocationSys/parser/example.txt");
+        this.report = new Report(this, this.edd);
+        //this.readData("/home/cesar31/Java/CourseAllocationSys/parser/example.txt");
     }
 
     public void initView() {
@@ -52,6 +53,7 @@ public final class MainController {
                         initCollaborator(u);
                         break;
                     case STUDENT:
+                        System.out.println("Sesion: " + u.getId());
                         break;
                 }
             } else {
@@ -78,11 +80,11 @@ public final class MainController {
         }
 
         /* Descomentar esto */
-//        if (read) {
-//            superView.showMessage("Informacion cargada", "Informacion");
-//        } else {
-//            superView.showMessage("La información no pudo ser cargada, revise la sintaxis de su archivo", "Error");
-//        }
+        if (read) {
+            superView.showMessage("Informacion cargada", "Informacion");
+        } else {
+            superView.showMessage("La información no pudo ser cargada, revise la sintaxis de su archivo", "Error");
+        }
     }
 
     private void initCollaborator(User u) {

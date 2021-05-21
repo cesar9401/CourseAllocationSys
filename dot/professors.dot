@@ -1,0 +1,12 @@
+digraph professors_tree{
+
+node[ shape = record ];
+
+node818811207[ label = "<C0> | 102\nProf102\nCiudad2 | <C1>" ];
+node1353050479[ label = "101\nProf101\nCiudad1" ];
+node361769102[ label = "103\nProf103\nCiudad3" ];
+
+node818811207:C1 -> node361769102;
+node818811207:C0 -> node1353050479;
+
+}

@@ -1,0 +1,40 @@
+digraph schedules_tree{
+
+node[ shape = record ];
+node1653323673[ label = "<P0>|<f0>33\n8:50am-9:40am\nmiercoles\ncurso: 779\nsalon: 10\nedificio: G\ndocente: 102|<P1>" ];
+node226877766[ label = "<P0>|<f0>31\n7:10am-8:00am\nlunes\ncurso: 777\nsalon: 30\nedificio: T3\ndocente: 100|<P1>|<f1>32\n8:00am-8:50am\nmartes\ncurso: 778\nsalon: 1\nedificio: G\ndocente: 101|<P2>" ];
+
+
+node242471085[ label = "464198670\nzona: 36\nfinal:25" group = 226877766];
+node226877766:f0 -> node242471085;
+node242471085 -> node242471085;
+node242471085 -> node242471085;
+node813274091[ label = "464198670\nzona: 31\nfinal:30" group = 226877766];
+node226877766:f1 -> node813274091;
+node813274091 -> node813274091;
+node813274091 -> node813274091;
+
+
+node1653323673:P0 -> node226877766;
+node1132634067[ label = "<P0>|<f0>34\n9:40am-10:30am\njueves\ncurso: 780\nsalon: 10\nedificio: G\ndocente: 103|<P1>|<f1>35\n10:30am-11:20am\nviernes\ncurso: 780\nsalon: 10\nedificio: G\ndocente: 103|<P2>" ];
+
+
+node431104740[ label = "201430927\nzona: 40\nfinal:25" group = 1132634067];
+node1132634067:f0 -> node431104740;
+node431104740 -> node431104740;
+node431104740 -> node431104740;
+
+
+node1653323673:P1 -> node1132634067;
+
+
+node739467034[ label = "201430927\nzona: 40\nfinal:25" group = 1653323673];
+node1258593524[ label = "201912331\nzona: 50\nfinal:25" group = 1653323673];
+node1653323673:f0 -> node739467034;
+node739467034 -> node1258593524;
+node739467034 -> node1258593524;
+node1258593524 -> node739467034;
+node1258593524 -> node739467034;
+
+
+}

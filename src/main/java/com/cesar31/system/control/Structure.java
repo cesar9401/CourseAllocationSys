@@ -28,9 +28,9 @@ public class Structure {
         this.courses = new DoublyLinkdList<>();
         this.schedules = new BTree<>(Schedule.class);
         // this.assignments = new DoublyLinkdList<>();
-        User u = new User("30927", "cesar31", "abc", UserType.SUPER);
-        System.out.println("Insertando: " + u);
-        this.users.insert("30927", u);
+        User u = new User("0001", "cesar31", "abc", UserType.SUPER);
+        System.out.println("Insertando -> user: 0001 password: abc");
+        this.users.insert(u.getId(), u);
 
         this.file = new FileControl();
     }

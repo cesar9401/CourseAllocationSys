@@ -4,8 +4,8 @@ target/
 parser/*.sh
 parser/*.java
 parser/*.java~
-parser/*.txt
+#parser/*.txt
 
 # ignore .dot and .png files
-*.dot
-*.png
+#*.dot
+#*.png

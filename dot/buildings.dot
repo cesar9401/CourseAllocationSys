@@ -1,0 +1,44 @@
+digraph buildings_list{
+
+node[ shape = box ];
+randir = LR;
+node1159371564[ label = "edificio: T3" group = 1159371564 ];
+node473121416 [ label = "salon: 30\ncapacidad: 300" group = 1159371564 ];
+
+node1159371564 -> node473121416;
+
+node448475823[ label = "edificio: G" group = 448475823 ];
+node84501727 [ label = "salon: 1\ncapacidad: 40" group = 448475823 ];
+node1024847273 [ label = "salon: 10\ncapacidad: 100" group = 448475823 ];
+node1774848537 [ label = "salon: 11\ncapacidad: 90" group = 448475823 ];
+
+node448475823 -> node84501727;
+node84501727 -> node1024847273;
+node1024847273 -> node1774848537;
+
+node715617221[ label = "edificio: H" group = 715617221 ];
+node1690752466 [ label = "salon: 1\ncapacidad: 90" group = 715617221 ];
+node1982600262 [ label = "salon: 2\ncapacidad: 50" group = 715617221 ];
+
+node715617221 -> node1690752466;
+node1690752466 -> node1982600262;
+
+node1326400088[ label = "edificio: I" group = 1326400088 ];
+
+
+node203235172[ label = "edificio: J" group = 203235172 ];
+
+
+node1159371564 -> node448475823;
+node1159371564 -> node203235172;
+node448475823 -> node715617221;
+node448475823 -> node1159371564;
+node715617221 -> node1326400088;
+node715617221 -> node448475823;
+node1326400088 -> node203235172;
+node1326400088 -> node715617221;
+node203235172 -> node1159371564;
+node203235172 -> node1326400088;
+{ rank = same; node1159371564; node448475823; node715617221; node1326400088; node203235172; }
+
+}

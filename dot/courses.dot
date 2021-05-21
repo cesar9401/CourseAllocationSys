@@ -1,0 +1,20 @@
+digraph courses_list{
+
+node[ shape = box ];
+randir = LR;
+node1600546541[ label = "778\ncompiladores2\nsemestre: 5\ncreditos: 6" ];
+node169375077[ label = "779\nedd\nsemestre: 6\ncreditos: 5" ];
+node797320274[ label = "780\nlenguajes\nsemestre: 6\ncreditos: 5" ];
+node284949796[ label = "666\nSistemas Operativos\nsemestre: 6\ncreditos: 5" ];
+
+node1600546541 -> node169375077;
+node1600546541 -> node284949796;
+node169375077 -> node797320274;
+node169375077 -> node1600546541;
+node797320274 -> node284949796;
+node797320274 -> node169375077;
+node284949796 -> node1600546541;
+node284949796 -> node797320274;
+
+{ rank = same; node1600546541; node169375077; node797320274; node284949796; }
+}

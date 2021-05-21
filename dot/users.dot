@@ -1,0 +1,17 @@
+digraph users_list{
+
+node[ shape = box ];
+randir = LR;
+node1727629886[ label = "30927\ncesar31\nsuper" ];
+node1257524704[ label = "1\nColaborador1\ncollaborator" ];
+node2134899424[ label = "464198670\nJuanito\nstudent" ];
+
+node1727629886 -> node1257524704;
+node1727629886 -> node2134899424;
+node1257524704 -> node2134899424;
+node1257524704 -> node1727629886;
+node2134899424 -> node1727629886;
+node2134899424 -> node1257524704;
+
+{ rank = same; node1727629886; node1257524704; node2134899424; }
+}

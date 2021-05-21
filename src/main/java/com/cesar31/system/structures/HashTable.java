@@ -31,7 +31,7 @@ public class HashTable<T> {
 
         // insertar
         if (arrayHash[index] == null) {
-            System.out.println("Insertando " + data.toString() + " -> " + index);
+            // System.out.println("Insertando " + data.toString() + " -> " + index);
             Container<T> tmp = new Container<>(key, data);
             arrayHash[index] = tmp;
             this.inserted++;
@@ -44,7 +44,7 @@ public class HashTable<T> {
                     index = hashFunction(collisionFunction(id, index));
                     // System.out.println(index);
                 } else {
-                    System.out.println("Cambiar " + data.toString() + " -> " + index);
+                    // System.out.println("Cambiar " + data.toString() + " -> " + index);
                     arrayHash[index].setData(data);
                     insert = false;
                     break;
@@ -52,7 +52,7 @@ public class HashTable<T> {
             }
 
             if (insert) {
-                System.out.println("Colision, insertar " + data.toString() + " -> " + index);
+                // System.out.println("Colision, insertar " + data.toString() + " -> " + index);
                 Container<T> tmp = new Container<>(key, data);
                 arrayHash[index] = tmp;
                 this.inserted++;
