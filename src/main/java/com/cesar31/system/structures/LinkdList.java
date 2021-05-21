@@ -114,4 +114,8 @@ public class LinkdList<T> {
             }
         }
     }
+
+    public ListNode<T> getRoot() {
+        return root;
+    }
 }

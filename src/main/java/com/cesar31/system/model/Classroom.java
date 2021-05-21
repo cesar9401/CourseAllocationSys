@@ -50,6 +50,6 @@ public class Classroom {
 
     @Override
     public String toString() {
-        return "Classroom{" + "building=" + building + ", id=" + id + ", numberOfStudents=" + numberOfStudents + '}';
+        return "salon: " + id + "\\ncapacidad: " + numberOfStudents;
     }
 }

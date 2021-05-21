@@ -197,4 +197,8 @@ public class HashTable<T> {
     public Integer getInserted() {
         return inserted;
     }
+
+    public Container<T>[] getArrayHash() {
+        return arrayHash;
+    }
 }

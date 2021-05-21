@@ -53,6 +53,7 @@ public class CollaboratorView extends javax.swing.JFrame {
         editButton = new javax.swing.JButton();
         delButton = new javax.swing.JButton();
         addButton = new javax.swing.JButton();
+        graphStudentsButton = new javax.swing.JButton();
         userPane = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -67,6 +68,7 @@ public class CollaboratorView extends javax.swing.JFrame {
         passUText = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
         typeUCombo = new javax.swing.JComboBox<>();
+        graphUsersButton = new javax.swing.JButton();
         coursePane = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -81,6 +83,7 @@ public class CollaboratorView extends javax.swing.JFrame {
         addCourseButton = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         creditsCourse = new javax.swing.JTextField();
+        graphCoursesButton = new javax.swing.JButton();
         professorPane = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -93,6 +96,7 @@ public class CollaboratorView extends javax.swing.JFrame {
         editProfButton = new javax.swing.JButton();
         delProfButton = new javax.swing.JButton();
         addProfButton = new javax.swing.JButton();
+        graphProfessorsButton = new javax.swing.JButton();
         buildingPane = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -110,6 +114,7 @@ public class CollaboratorView extends javax.swing.JFrame {
         addClassroom = new javax.swing.JButton();
         editClassroom = new javax.swing.JButton();
         delClassroom = new javax.swing.JButton();
+        graphBuildingsButton = new javax.swing.JButton();
         assignmentPane = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -124,6 +129,8 @@ public class CollaboratorView extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         assignScore = new javax.swing.JTextField();
         assignTest = new javax.swing.JTextField();
+        graphSchedulesButton = new javax.swing.JButton();
+        graphAssignments = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -209,6 +216,16 @@ public class CollaboratorView extends javax.swing.JFrame {
             }
         });
 
+        graphStudentsButton.setBackground(new java.awt.Color(52, 152, 219));
+        graphStudentsButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        graphStudentsButton.setForeground(new java.awt.Color(66, 73, 73));
+        graphStudentsButton.setText("Gráficar");
+        graphStudentsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphStudentsButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout studentPaneLayout = new javax.swing.GroupLayout(studentPane);
         studentPane.setLayout(studentPaneLayout);
         studentPaneLayout.setHorizontalGroup(
@@ -221,7 +238,8 @@ public class CollaboratorView extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(studentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(idText, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                    .addComponent(graphStudentsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(idText, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
                     .addComponent(nameText)
                     .addComponent(addressText)
                     .addGroup(studentPaneLayout.createSequentialGroup()
@@ -235,7 +253,7 @@ public class CollaboratorView extends javax.swing.JFrame {
                 .addGap(255, 255, 255))
             .addGroup(studentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, studentPaneLayout.createSequentialGroup()
-                    .addContainerGap(281, Short.MAX_VALUE)
+                    .addContainerGap(284, Short.MAX_VALUE)
                     .addComponent(jLabel3)
                     .addGap(270, 270, 270)))
         );
@@ -262,7 +280,9 @@ public class CollaboratorView extends javax.swing.JFrame {
                 .addGroup(studentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editButton)
                     .addComponent(delButton))
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(graphStudentsButton)
+                .addContainerGap(214, Short.MAX_VALUE))
             .addGroup(studentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(studentPaneLayout.createSequentialGroup()
                     .addGap(48, 48, 48)
@@ -351,6 +371,16 @@ public class CollaboratorView extends javax.swing.JFrame {
         typeUCombo.setForeground(new java.awt.Color(0, 0, 0));
         typeUCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estudiante", "Colaborador" }));
 
+        graphUsersButton.setBackground(new java.awt.Color(52, 152, 219));
+        graphUsersButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        graphUsersButton.setForeground(new java.awt.Color(66, 73, 73));
+        graphUsersButton.setText("Gráficar");
+        graphUsersButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphUsersButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout userPaneLayout = new javax.swing.GroupLayout(userPane);
         userPane.setLayout(userPaneLayout);
         userPaneLayout.setHorizontalGroup(
@@ -368,6 +398,7 @@ public class CollaboratorView extends javax.swing.JFrame {
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(userPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(graphUsersButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(idUTxt)
                     .addComponent(userTxt)
                     .addGroup(userPaneLayout.createSequentialGroup()
@@ -376,7 +407,7 @@ public class CollaboratorView extends javax.swing.JFrame {
                             .addComponent(editUButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(userPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addUButton, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                            .addComponent(addUButton, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
                             .addComponent(delUButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(passUText)
                     .addComponent(typeUCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -411,7 +442,9 @@ public class CollaboratorView extends javax.swing.JFrame {
                 .addGroup(userPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editUButton)
                     .addComponent(delUButton))
-                .addContainerGap(268, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(graphUsersButton)
+                .addContainerGap(200, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Usuarios", userPane);
@@ -494,6 +527,16 @@ public class CollaboratorView extends javax.swing.JFrame {
         creditsCourse.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         creditsCourse.setForeground(new java.awt.Color(0, 0, 0));
 
+        graphCoursesButton.setBackground(new java.awt.Color(52, 152, 219));
+        graphCoursesButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        graphCoursesButton.setForeground(new java.awt.Color(66, 73, 73));
+        graphCoursesButton.setText("Gráficar");
+        graphCoursesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphCoursesButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout coursePaneLayout = new javax.swing.GroupLayout(coursePane);
         coursePane.setLayout(coursePaneLayout);
         coursePaneLayout.setHorizontalGroup(
@@ -511,7 +554,7 @@ public class CollaboratorView extends javax.swing.JFrame {
                     .addComponent(jLabel13))
                 .addGap(18, 18, 18)
                 .addGroup(coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(codCourse, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                    .addComponent(codCourse, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
                     .addComponent(nameCourse)
                     .addComponent(semesterCourse)
                     .addGroup(coursePaneLayout.createSequentialGroup()
@@ -522,7 +565,8 @@ public class CollaboratorView extends javax.swing.JFrame {
                         .addGroup(coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(addCourseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(delCourseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(creditsCourse))
+                    .addComponent(creditsCourse)
+                    .addComponent(graphCoursesButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(255, 255, 255))
         );
         coursePaneLayout.setVerticalGroup(
@@ -554,7 +598,9 @@ public class CollaboratorView extends javax.swing.JFrame {
                 .addGroup(coursePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editCourseButton)
                     .addComponent(delCourseButton))
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(graphCoursesButton)
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Cursos", coursePane);
@@ -629,6 +675,16 @@ public class CollaboratorView extends javax.swing.JFrame {
             }
         });
 
+        graphProfessorsButton.setBackground(new java.awt.Color(52, 152, 219));
+        graphProfessorsButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        graphProfessorsButton.setForeground(new java.awt.Color(66, 73, 73));
+        graphProfessorsButton.setText("Gráficar");
+        graphProfessorsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphProfessorsButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout professorPaneLayout = new javax.swing.GroupLayout(professorPane);
         professorPane.setLayout(professorPaneLayout);
         professorPaneLayout.setHorizontalGroup(
@@ -644,12 +700,13 @@ public class CollaboratorView extends javax.swing.JFrame {
                     .addGroup(professorPaneLayout.createSequentialGroup()
                         .addComponent(jLabel17)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(professorPaneLayout.createSequentialGroup()
-                        .addGroup(professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(idProf, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
-                            .addComponent(nameProf)
-                            .addComponent(addressProf)
-                            .addGroup(professorPaneLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, professorPaneLayout.createSequentialGroup()
+                        .addGroup(professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(graphProfessorsButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(idProf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                            .addComponent(nameProf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addressProf, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, professorPaneLayout.createSequentialGroup()
                                 .addGroup(professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(searchProfButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(editProfButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -684,7 +741,9 @@ public class CollaboratorView extends javax.swing.JFrame {
                 .addGroup(professorPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editProfButton)
                     .addComponent(delProfButton))
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(graphProfessorsButton)
+                .addContainerGap(211, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Catedraticos", professorPane);
@@ -791,6 +850,16 @@ public class CollaboratorView extends javax.swing.JFrame {
             }
         });
 
+        graphBuildingsButton.setBackground(new java.awt.Color(52, 152, 219));
+        graphBuildingsButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        graphBuildingsButton.setForeground(new java.awt.Color(66, 73, 73));
+        graphBuildingsButton.setText("Gráficar");
+        graphBuildingsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphBuildingsButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout buildingPaneLayout = new javax.swing.GroupLayout(buildingPane);
         buildingPane.setLayout(buildingPaneLayout);
         buildingPaneLayout.setHorizontalGroup(
@@ -815,7 +884,8 @@ public class CollaboratorView extends javax.swing.JFrame {
                                 .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(addClassroom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(delClassroom, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)))
-                            .addComponent(buildingClass)))
+                            .addComponent(buildingClass)
+                            .addComponent(graphBuildingsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(buildingPaneLayout.createSequentialGroup()
                             .addGap(299, 299, 299)
@@ -870,7 +940,9 @@ public class CollaboratorView extends javax.swing.JFrame {
                 .addGroup(buildingPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editClassroom)
                     .addComponent(delClassroom))
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addComponent(graphBuildingsButton)
+                .addGap(51, 51, 51))
         );
 
         jTabbedPane1.addTab("Edificios", buildingPane);
@@ -953,6 +1025,26 @@ public class CollaboratorView extends javax.swing.JFrame {
         assignTest.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         assignTest.setForeground(new java.awt.Color(0, 0, 0));
 
+        graphSchedulesButton.setBackground(new java.awt.Color(52, 152, 219));
+        graphSchedulesButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        graphSchedulesButton.setForeground(new java.awt.Color(66, 73, 73));
+        graphSchedulesButton.setText("Gráficar Horarios");
+        graphSchedulesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphSchedulesButtonActionPerformed(evt);
+            }
+        });
+
+        graphAssignments.setBackground(new java.awt.Color(52, 152, 219));
+        graphAssignments.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        graphAssignments.setForeground(new java.awt.Color(66, 73, 73));
+        graphAssignments.setText("Gráficar Horarios y Asig");
+        graphAssignments.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphAssignmentsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout assignmentPaneLayout = new javax.swing.GroupLayout(assignmentPane);
         assignmentPane.setLayout(assignmentPaneLayout);
         assignmentPaneLayout.setHorizontalGroup(
@@ -979,10 +1071,12 @@ public class CollaboratorView extends javax.swing.JFrame {
                                     .addComponent(editAButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(addAButton, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                                    .addComponent(addAButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(delAButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(assignScore)
-                            .addComponent(assignTest))
+                            .addComponent(assignTest)
+                            .addComponent(graphSchedulesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(graphAssignments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(255, 255, 255))))
         );
         assignmentPaneLayout.setVerticalGroup(
@@ -1014,7 +1108,11 @@ public class CollaboratorView extends javax.swing.JFrame {
                 .addGroup(assignmentPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editAButton)
                     .addComponent(delAButton))
-                .addContainerGap(268, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(graphSchedulesButton)
+                .addGap(18, 18, 18)
+                .addComponent(graphAssignments)
+                .addContainerGap(139, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Asignaciones", assignmentPane);
@@ -1346,7 +1444,7 @@ public class CollaboratorView extends javax.swing.JFrame {
         // TODO add your handling code here:
         String student = assignStudent.getText();
         String schedule = assignSchedule.getText();
-        
+
         crud.delAssignment(student, schedule);
     }//GEN-LAST:event_delAButtonActionPerformed
 
@@ -1359,6 +1457,41 @@ public class CollaboratorView extends javax.swing.JFrame {
 
         crud.addAssignment(student, schedule, score, test);
     }//GEN-LAST:event_addAButtonActionPerformed
+
+    private void graphStudentsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphStudentsButtonActionPerformed
+        // TODO add your handling code here:
+        control.getEdd().graphStudents();
+    }//GEN-LAST:event_graphStudentsButtonActionPerformed
+
+    private void graphUsersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphUsersButtonActionPerformed
+        // TODO add your handling code here:
+        control.getEdd().graphUsers();
+    }//GEN-LAST:event_graphUsersButtonActionPerformed
+
+    private void graphCoursesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphCoursesButtonActionPerformed
+        // TODO add your handling code here:
+        control.getEdd().graphCourses();
+    }//GEN-LAST:event_graphCoursesButtonActionPerformed
+
+    private void graphProfessorsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphProfessorsButtonActionPerformed
+        // TODO add your handling code here:
+        control.getEdd().graphProfessors();
+    }//GEN-LAST:event_graphProfessorsButtonActionPerformed
+
+    private void graphBuildingsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphBuildingsButtonActionPerformed
+        // TODO add your handling code here:
+        control.getEdd().graphBuildings();
+    }//GEN-LAST:event_graphBuildingsButtonActionPerformed
+
+    private void graphSchedulesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphSchedulesButtonActionPerformed
+        // TODO add your handling code here:
+        control.getEdd().graphSchedules(false);
+    }//GEN-LAST:event_graphSchedulesButtonActionPerformed
+
+    private void graphAssignmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphAssignmentsActionPerformed
+        // TODO add your handling code here:
+        control.getEdd().graphSchedules(true);
+    }//GEN-LAST:event_graphAssignmentsActionPerformed
 
     public void clearClassroom() {
         buildingClass.setText("");
@@ -1439,6 +1572,13 @@ public class CollaboratorView extends javax.swing.JFrame {
     private javax.swing.JButton editCourseButton;
     private javax.swing.JButton editProfButton;
     private javax.swing.JButton editUButton;
+    private javax.swing.JButton graphAssignments;
+    private javax.swing.JButton graphBuildingsButton;
+    private javax.swing.JButton graphCoursesButton;
+    private javax.swing.JButton graphProfessorsButton;
+    private javax.swing.JButton graphSchedulesButton;
+    private javax.swing.JButton graphStudentsButton;
+    private javax.swing.JButton graphUsersButton;
     private javax.swing.JTextField idBuilding;
     private javax.swing.JTextField idProf;
     private javax.swing.JTextField idText;

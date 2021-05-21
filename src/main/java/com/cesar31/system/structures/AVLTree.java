@@ -252,4 +252,8 @@ public class AVLTree<T> {
             getSize(node.getRight());
         }
     }
+
+    public AVLNode<T> getRoot() {
+        return root;
+    }
 }

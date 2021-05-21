@@ -15,7 +15,7 @@ public class Schedule {
     private Classroom classroom;
     private Building building;
     private Professor professor;
-    
+
     // Asignaciones
     private DoublyLinkdList<Assignment> assignments;
 
@@ -29,7 +29,7 @@ public class Schedule {
         this.interval = interval;
         this.day = day;
     }
-    
+
     public Schedule(String id, String interval, String day, Course course, Classroom classroom, Building building, Professor professor) {
         this();
         this.id = id;
@@ -103,6 +103,32 @@ public class Schedule {
 
     @Override
     public String toString() {
-        return "Schedule{" + "id=" + id + ", interval=" + interval + ", day=" + day + ", course=" + course + ", classroom=" + classroom + ", building=" + building + ", professor=" + professor + '}';
+        String toStr = id + "\\n" + interval + "\\n" + day;
+
+        if (this.course != null) {
+            toStr += "\\ncurso: " + this.course.getId();
+        } else {
+            toStr += "\\ncurso: null";
+        }
+
+        if (this.classroom != null) {
+            toStr += "\\nsalon: " + this.classroom.getId();
+        } else {
+            toStr += "\\nsalon: null";
+        }
+
+        if (this.building != null) {
+            toStr += "\\nedificio: " + this.building.getName();
+        } else {
+            toStr += "\\nedificio: null";
+        }
+
+        if (this.professor != null) {
+            toStr += "\\ndocente: " + this.professor.getId();
+        } else {
+            toStr += "\\ndocente: null";
+        }
+
+        return toStr;
     }
 }

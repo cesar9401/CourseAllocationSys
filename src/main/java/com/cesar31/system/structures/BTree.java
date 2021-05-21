@@ -14,7 +14,8 @@ public class BTree<T> {
 
     public String toDot() {
         StringBuilder b = new StringBuilder();
-        b.append("digraph g { \n node [shape=record];\n");
+        b.append("digraph b_tree {\n\n");
+        b.append("node [shape=record];\n");
         b.append(root.toDot());
         b.append("}");
         return b.toString();

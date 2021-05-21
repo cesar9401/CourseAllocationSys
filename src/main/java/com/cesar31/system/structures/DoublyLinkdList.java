@@ -92,6 +92,10 @@ public class DoublyLinkdList<T> {
         }
     }
 
+    public ListNode<T> getTop() {
+        return top;
+    }
+
     public int getSize() {
         return size;
     }

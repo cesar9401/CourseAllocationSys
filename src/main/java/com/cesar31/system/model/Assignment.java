@@ -66,6 +66,6 @@ public class Assignment {
 
     @Override
     public String toString() {
-        return "Assignment{" + "id=" + id + ", student=" + student + ", schedule=" + schedule + ", homeworkScore=" + homeworkScore + ", testScore=" + testScore + '}';
+        return id + "\\nzona: " + homeworkScore + "\\nfinal:" + testScore;
     }
 }
