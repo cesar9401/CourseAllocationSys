@@ -1,0 +1,200 @@
+Estudiante(200611595, "ESTUDIANTE1", "La Esperanza"); 
+Estudiante(201020600, "ESTUDIANTE2", "Guatemala"); 
+Estudiante(201313828, "ESTUDIANTE3", "Quetzaltenango");
+Estudiante(201314064, "ESTUDIANTE4", "Quetzaltenango");
+Estudiante(201314128, "ESTUDIANTE5", "Quetzaltenango");
+Estudiante(201318652, "ESTUDIANTE6", "Quetzaltenango");
+Estudiante(201325541, "ESTUDIANTE7", "Quetzaltenango");
+Estudiante(201345126, "ESTUDIANTE8", "Quetzaltenango");
+Estudiante(201403744, "ESTUDIANTE9", "Quetzaltenango");
+Estudiante(201403907, "ESTUDIANTE10", "Quetzaltenango");
+Estudiante(201403975, "ESTUDIANTE11", "Quetzaltenango");
+Estudiante(201404334, "ESTUDIANTE12", "Quetzaltenango");
+Estudiante(201408507, "ESTUDIANTE13", "Quetzaltenango");
+Estudiante(201408549, "ESTUDIANTE14", "Quetzaltenango");
+Estudiante(201408562, "ESTUDIANTE15", "Quetzaltenango");
+Estudiante(201503442, "ESTUDIANTE16", "Quetzaltenango");
+Estudiante(201503774, "ESTUDIANTE17", "Quetzaltenango");
+Estudiante(201503783, "ESTUDIANTE18", "Quetzaltenango");
+Estudiante(201544511, "ESTUDIANTE19", "Quetzaltenango");
+Estudiante(201602676, "ESTUDIANTE20", "Quetzaltenango");
+
+Estudiante(201602719, "ESTUDIANTE21", "Quetzaltenango");
+Estudiante(201602744, "ESTUDIANTE22", "Quetzaltenango");
+
+Estudiante(201602836, "ESTUDIANTE23", "Quetzaltenango");
+
+Estudiante(201602851, "ESTUDIANTE24", "Quetzaltenango");
+Estudiante(201603052, "ESTUDIANTE25", "Quetzaltenango");
+Estudiante(201603103, "ESTUDIANTE26", "Quetzaltenango");
+Estudiante(201612326, "ESTUDIANTE27", "Quetzaltenango");
+Estudiante(201700308, "ESTUDIANTE28", "Quetzaltenango");
+Estudiante(201700324, "ESTUDIANTE29", "Quetzaltenango");
+Estudiante(201700378, "ESTUDIANTE30", "Quetzaltenango");
+Estudiante(201700539, "ESTUDIANTE31", "Quetzaltenango");
+
+Estudiante(201700556, "ESTUDIANTE32", "Quetzaltenango");
+Estudiante(201700565, "ESTUDIANTE33", "Quetzaltenango");
+Estudiante(201700670, "ESTUDIANTE34", "Quetzaltenango");
+Estudiante(201700727, "ESTUDIANTE35", "Quetzaltenango");
+Estudiante(201700886, "ESTUDIANTE36", "Quetzaltenango");
+Estudiante(201709014, "ESTUDIANTE37", "Quetzaltenango");
+Estudiante(201712680, "ESTUDIANTE38", "Quetzaltenango");
+Estudiante(201731814, "ESTUDIANTE39", "Quetzaltenango");
+Estudiante(201020951, "ESTUDIANTE40", "Guatemala");
+Estudiante(464198670, "JULIO ARANGO", "GUATEMALA");
+Estudiante(201503865, "JULIA SIERRA", "GUATEMALA");
+
+Usuario(1, "Colaborador1", "12345", colaborador);
+Usuario(10, "Colaborador10", "12345", colaborador);
+Usuario(2, "Colaborador2", "12345", colaborador);
+Usuario(3, "Colaborador3", "12345", colaborador);
+Usuario(4, "Colaborador4", "12345", colaborador);
+Usuario(5, "Colaborador5", "12345", colaborador);
+Usuario(6, "Colaborador6", "12345", colaborador);
+Usuario(7, "Colaborador7", "12345", colaborador);
+Usuario(8, "Colaborador8", "12345", colaborador);
+Usuario(9, "Colaborador9", "12345", colaborador); 
+
+Usuario(464198670, "Julius", "12345", estudiante); 
+Usuario(201503865, "Juliana", "12345", estudiante);
+
+Edificio ("T1");
+Edificio ("T2");
+Edificio ("T3");
+Edificio ("T4");
+Edificio ("T5");
+Edificio ("T6");
+Edificio ("T7");
+Edificio ("T8");
+Edificio ("T9");
+Edificio ("L1");
+Edificio ("L2");
+Edificio ("L3");
+Edificio ("L4");
+Edificio ("L5");
+Edificio ("L6");
+Edificio ("L7");
+Edificio ("L8");
+Edificio ("L9");
+
+Salon("T1", 10, 100);
+Salon("T2", 20, 200);
+Salon("T2", 21, 210);
+Salon("T3", 30, 300);
+Salon("T3", 31, 310);
+Salon("T3", 32, 320);
+Salon("T4", 40, 400);
+Salon("T4", 41, 410);
+Salon("T4", 42, 420);
+Salon("T4", 43, 430);
+Salon("T5", 50, 500);
+Salon("T5", 51, 510);
+Salon("T5", 52, 520);
+Salon("T5", 53, 530);
+Salon("T5", 54, 540);
+
+Salon("L1", 10, 100);
+Salon("L2", 20, 200);
+Salon("L2", 21, 210);
+Salon("L3", 30, 300);
+Salon("L3", 31, 310);
+Salon("L3", 32, 320);
+Salon("L4", 40, 400);
+Salon("L4", 41, 410);
+Salon("L4", 42, 420);
+Salon("L4", 43, 430);
+Salon("L5", 50, 500);
+Salon("L5", 51, 510);
+Salon("L5", 52, 520);
+Salon("L5", 53, 530);
+Salon("L5", 54, 540);
+
+
+Catedratico(100,"Prof100","Ciudad"); 
+Catedratico(101,"Prof101","Ciudad"); 
+Catedratico(102,"Prof102","Ciudad"); 
+Catedratico(103,"Prof103","Ciudad"); 
+Catedratico(104,"Prof104","Ciudad"); 
+Catedratico(105,"Prof105","Ciudad"); 
+Catedratico(200,"Prof200","Ciudad"); 
+Catedratico(300,"Prof300","Ciudad"); 
+Catedratico(400,"Prof400","Ciudad"); 
+Catedratico(500,"Prof500","Ciudad"); 
+Catedratico(1,"Prof1","Ciudad"); 
+Catedratico(2,"Prof2","Ciudad"); 
+Catedratico(3,"Prof3","Ciudad"); 
+Catedratico(4,"Prof4","Ciudad"); 
+Catedratico(5,"Prof5","Ciudad"); 
+Catedratico(11,"Prof11","Ciudad"); 
+Catedratico(12,"Prof12","Ciudad"); 
+Catedratico(13,"Prof13","Ciudad"); 
+Catedratico(14,"Prof14","Ciudad"); 
+Catedratico(15,"Prof15","Ciudad"); 
+
+Curso (777,"compiladores1", 5, 4);
+Curso (781,"compiladores2", 5, 4);
+Curso (771,"programacion2", 4, 4);
+Curso (779,"arqui 2", 7, 4);
+Curso (732,"Estadistica 1", 4, 4);
+Curso (795,"Leguajes formales", 4, 4);
+
+Horario(31,"7:10am-8:00am","lunes",777,30,T3,1);
+Horario(42,"8:00am-8:50am","lunes",781,40,T4,2); 
+Horario(83,"7:10am-8:00am","viernes",781,50,T5,3); 
+Horario(91,"8:00am-8:50am","viernes",777,10,T1,4); 
+Horario(5,"7:10am-8:00am","martes",771,31,L3,5);
+Horario(6,"8:00am-8:50am","martes",779,21,L2,11);
+Horario(7,"7:10am-8:00am","jueves",779,10,L1,12);
+Horario(8,"8:00am-8:50am","jueves",732,20,T2,13); 
+Horario(9,"9:10am-10:00am","martes",732,42,L4,14); 
+Horario(10,"10:00am-10:50am","martes",779,54,L5,15);
+Horario(11,"7:10am-8:00am","lunes",781,10,T1,100);
+Horario(112,"8:00am-8:50am","lunes",777,21,T2,101); 
+Horario(73,"7:10am-8:00am","viernes",781,31,T3,102); 
+Horario(84,"8:00am-8:50am","viernes",777,43,T4,103); 
+Horario(15,"7:10am-8:00am","martes",771,51,T5,104);
+Horario(16,"8:00am-8:50am","martes",771,10,L1,105);
+Horario(17,"7:10am-8:00am","jueves",795,21,L2,200);
+Horario(108,"8:00am-8:50am","jueves",771,31,L3,300); 
+Horario(19,"9:10am-10:00am","martes",779,41,L4,400); 
+Horario(20,"10:00am-10:50am","martes",795,51,L5,500); 
+
+Asignar (200611595, 31, 36, 25);
+Asignar (201020600, 31, 37, 25);
+Asignar (201020951, 31, 38, 25);
+
+Asignar (201313828, 42, 43, 15);
+Asignar (201314064, 42, 44, 15);
+Asignar (201314128, 42, 45, 15);
+Asignar (201318652, 42, 46, 15);
+
+Asignar (201325541, 83, 70, 20);
+Asignar (201345126, 83, 75, 20);
+
+Asignar (201403744, 91, 49, 15);
+Asignar (201403907, 91, 59, 15);
+Asignar (201403975, 91, 69, 15);
+Asignar (201404334, 91, 79, 15);
+
+Asignar (201408507, 5, 50, 15);
+Asignar (201408549, 5, 51, 15);
+Asignar (201408562, 5, 52, 15);
+Asignar (201503442, 5, 53, 15);
+
+Asignar (201503774, 6, 60, 15);
+Asignar (201503783, 6, 61, 15);
+Asignar (201544511, 6, 62, 15);
+Asignar (201602676, 6, 63, 15);
+Asignar (201602719, 6, 64, 15);
+Asignar (201602744, 6, 65, 15);
+Asignar (201602836, 6, 66, 15);
+Asignar (201602851, 6, 67, 15);
+
+Asignar (201503865, 5, 69, 25);
+Asignar (201503865, 6, 70, 25);
+Asignar (201503865, 7, 71, 25);
+Asignar (201503865, 8, 72, 25);
+Asignar (201503865, 9, 73, 25);
+Asignar (201503865, 10, 74, 25);
+Asignar (201503865, 11, 75, 25);
