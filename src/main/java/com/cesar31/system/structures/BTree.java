@@ -22,7 +22,8 @@ public class BTree<T> {
     }
 
     public BTree() {
-        this.mK = 2;
+        // this.mK = 2;
+        this.mK = 5;
         this.height = 0;
     }
 
